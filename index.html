@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darco Construction Painting Career Course — From Zero to Employed</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f8f7f4;
+    --surface: #ffffff;
+    --surface2: #f0ede8;
+    --border: #e0dbd3;
+    --accent: #1a1a2e;
+    --accent2: #2d2d4a;
+    --accent-dim: rgba(26,26,46,0.07);
+    --text: #1a1a2e;
+    --text-muted: #4a4a5a;
+    --text-dim: #8a8a9a;
+    --green: #2d7d46;
+    --red: #c0392b;
+    --white: #ffffff;
+    --chapter-done: #e8f5ec;
+    --highlight: #c8a850;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(248,247,244,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 56px;
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* CHAPTER NAV STRIP */
+  .chapter-strip {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .chapter-strip::-webkit-scrollbar { display: none; }
+  .chapter-strip-inner {
+    display: inline-flex;
+    gap: 0;
+    height: 44px;
+    align-items: center;
+  }
+  .ch-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 14px;
+    height: 44px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-dim);
+    text-decoration: none;
+    border-right: 1px solid var(--border);
+    transition: all 0.15s;
+    cursor: pointer;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
+  }
+  .ch-btn:first-child { border-left: 1px solid var(--border); }
+  .ch-btn:hover { background: var(--accent-dim); color: var(--accent); }
+  .ch-btn.done { color: var(--green); }
+  .ch-btn .ch-check { font-size: 10px; }
+
+  /* HERO */
+  .hero {
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 32px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,168,80,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(200,168,80,0.12);
+    border: 1px solid rgba(200,168,80,0.4);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #8a6a10;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 96px);
+    letter-spacing: 2px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: #8a6a10;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 20px auto 40px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: #8a6a10;
+    letter-spacing: 1px;
+    display: block;
+  }
+  .hero-stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.5px;
+  }
+  .hero-cta:hover { background: var(--accent2); transform: translateY(-1px); }
+
+  /* PROGRESS BAR */
+  .progress-bar-wrap {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .progress-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .progress-track {
+    flex: 1;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: #1a1a2e;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
+  .progress-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: #1a1a2e;
+    white-space: nowrap;
+  }
+  .reset-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+  .reset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* CHAPTERS */
+  .chapter {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 80px 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .chapter-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8a6a10;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .chapter-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 60px;
+  }
+  .chapter h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 5vw, 56px);
+    letter-spacing: 1px;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 28px;
+  }
+  .chapter h2 em {
+    font-style: italic;
+    color: #8a6a10;
+  }
+  .chapter h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    margin: 40px 0 14px;
+  }
+  .chapter h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 24px 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .chapter p {
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+  .chapter ul, .chapter ol {
+    color: var(--text-muted);
+    padding-left: 20px;
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+  .chapter li { margin-bottom: 6px; }
+
+  /* CALLOUT BOXES */
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--surface);
+    border-radius: 0 6px 6px 0;
+    padding: 18px 22px;
+    margin: 28px 0;
+    font-size: 15px;
+    color: var(--text-muted);
+  }
+  .callout.warning {
+    border-left-color: #d9534f;
+    background: rgba(217,83,79,0.07);
+  }
+  .callout.tip {
+    border-left-color: var(--green);
+    background: rgba(92,184,92,0.07);
+  }
+  .callout.info {
+    border-left-color: #5bc0de;
+    background: rgba(91,192,222,0.07);
+  }
+  .callout-icon {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+
+  /* TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .data-table th {
+    background: var(--surface2);
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+  }
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    vertical-align: top;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--surface); }
+
+  /* VIDEO CARDS */
+  .video-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    transition: border-color 0.2s;
+  }
+  .video-card:hover { border-color: var(--accent); }
+  .video-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(232,160,69,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    color: var(--accent);
+  }
+  .video-meta { flex: 1; }
+  .video-title { font-weight: 600; color: var(--white); margin-bottom: 4px; font-size: 15px; }
+  .video-desc { font-size: 13px; color: var(--text-dim); margin-bottom: 10px; }
+  .video-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .tag {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 11px;
+    color: var(--text-dim);
+    font-family: 'DM Mono', monospace;
+  }
+  .video-link {
+    font-size: 13px;
+    color: #1a1a2e;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid #1a1a2e;
+  }
+  .video-link:hover { color: #8a6a10; border-bottom-color: #8a6a10; }
+  .video-advisory {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  /* CAREER PATH CARDS */
+  .career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .career-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .career-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .career-card-icon { font-size: 28px; margin-bottom: 10px; }
+  .career-card-title { font-weight: 700; color: var(--white); margin-bottom: 6px; font-size: 15px; }
+  .career-card-pay { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--accent); margin-bottom: 8px; }
+  .career-card-desc { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+  /* TOOL GRID */
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .tool-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+  }
+  .tool-icon { font-size: 22px; margin-bottom: 8px; }
+  .tool-name { font-weight: 600; color: var(--white); font-size: 14px; margin-bottom: 4px; }
+  .tool-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+  /* CERT CARDS */
+  .cert-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .cert-badge {
+    background: var(--accent-dim);
+    border: 1px solid rgba(232,160,69,0.3);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 500;
+    text-align: center;
+    flex-shrink: 0;
+    min-width: 70px;
+  }
+  .cert-info { flex: 1; }
+  .cert-name { font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .cert-detail { font-size: 13px; color: var(--text-dim); }
+  .cert-link { font-size: 13px; color: var(--accent); text-decoration: none; }
+  .cert-link:hover { text-decoration: underline; }
+
+  /* TIMELINE */
+  .timeline { margin: 28px 0; }
+  .timeline-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .timeline-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 2px solid #8a6a10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: #8a6a10;
+    flex-shrink: 0;
+  }
+  .timeline-line {
+    width: 2px;
+    flex: 1;
+    background: var(--border);
+    margin-top: 6px;
+    min-height: 30px;
+  }
+  .timeline-content { padding-top: 6px; }
+  .timeline-title { font-weight: 700; color: var(--white); margin-bottom: 4px; font-size: 16px; }
+  .timeline-pay { font-family: 'DM Mono', monospace; font-size: 13px; color: #8a6a10; margin-bottom: 8px; }
+  .timeline-desc { font-size: 14px; color: var(--text-dim); }
+
+  /* WEEK PLAN */
+  .week-plan { margin: 28px 0; }
+  .week-item {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .week-header {
+    background: var(--surface2);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .week-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    line-height: 1;
+    min-width: 60px;
+  }
+  .week-title { font-weight: 600; color: var(--white); }
+  .week-subtitle { font-size: 13px; color: var(--text-dim); }
+  .week-body {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border);
+  }
+  .week-milestone {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(232,160,69,0.25);
+    border-radius: 100px;
+    padding: 3px 12px;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  /* QUIZ */
+  .quiz-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px;
+    margin-top: 60px;
+  }
+  .quiz-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .quiz-subtitle { font-size: 13px; color: var(--text-dim); margin-bottom: 24px; }
+  .complete-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .complete-btn:hover { background: var(--accent2); }
+  .complete-btn.completed {
+    background: var(--green);
+    cursor: default;
+  }
+  .next-chapter-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #1a1a2e;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 20px;
+    border-bottom: 1px solid #1a1a2e;
+  }
+  .next-chapter-link:hover { color: #8a6a10; border-bottom-color: #8a6a10; }
+  .chapter-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; flex-wrap: wrap; gap: 12px; }
+
+  /* COUNTDOWN OVERLAY */
+  .countdown-overlay {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    width: 260px;
+    z-index: 200;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    transition: all 0.3s;
+  }
+  .countdown-overlay.hidden { transform: translateY(120%); opacity: 0; pointer-events: none; }
+  .countdown-setup { }
+  .countdown-active { display: none; }
+  .countdown-overlay.running .countdown-setup { display: none; }
+  .countdown-overlay.running .countdown-active { display: block; }
+  .countdown-header {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .countdown-minimize {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .countdown-label { font-size: 12px; color: var(--text-dim); margin-bottom: 6px; }
+  .countdown-input {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-size: 13px;
+    padding: 8px 12px;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 10px;
+  }
+  .countdown-input:focus { outline: none; border-color: var(--accent); }
+  .countdown-select {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-size: 13px;
+    padding: 8px 12px;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 14px;
+    cursor: pointer;
+  }
+  .countdown-select:focus { outline: none; border-color: var(--accent); }
+  .countdown-start {
+    width: 100%;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+  }
+  .countdown-start:hover { background: var(--accent2); }
+  .countdown-display {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 8px 0;
+    transition: color 0.3s;
+  }
+  .countdown-display.on-track { color: var(--green); }
+  .countdown-display.behind { color: var(--red); }
+  .countdown-status { font-size: 11px; text-align: center; color: var(--text-dim); margin-bottom: 8px; }
+  .countdown-progress-mini {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-align: center;
+  }
+
+  /* COMPLETE OVERLAY */
+  .complete-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 300;
+    align-items: center;
+    justify-content: center;
+  }
+  .complete-overlay.show { display: flex; }
+  .complete-box {
+    background: var(--surface);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 48px;
+    text-align: center;
+    max-width: 480px;
+    width: 90%;
+  }
+  .complete-emoji { font-size: 64px; margin-bottom: 20px; }
+  .complete-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 44px;
+    letter-spacing: 2px;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .complete-sub { color: var(--text-muted); margin-bottom: 28px; font-size: 15px; }
+  .complete-close {
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 32px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 48px 32px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  footer .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    nav { padding: 0 16px; }
+    .nav-links { display: none; }
+    .chapter { padding: 60px 20px; }
+    .hero { padding: 60px 20px 40px; }
+    .hero-stats { gap: 24px; }
+    .progress-bar-wrap { padding: 12px 16px; }
+    .countdown-overlay { width: calc(100vw - 32px); right: 16px; bottom: 16px; }
+    .career-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ANIMATION */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .chapter { animation: fadeUp 0.4s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">🏗️ Darco Painting Trade Course</a>
+  <ul class="nav-links">
+    <li><a href="#ch0">Orientation</a></li>
+    <li><a href="#ch1">The Trade</a></li>
+    <li><a href="#ch5">Techniques</a></li>
+    <li><a href="#ch10">Get Hired</a></li>
+  </ul>
+</nav>
+
+<!-- CHAPTER STRIP -->
+<div class="chapter-strip">
+  <div class="chapter-strip-inner" id="chapterStrip">
+    <button class="ch-btn" onclick="scrollTo('#ch0')">0 · Welcome</button>
+    <button class="ch-btn" onclick="scrollTo('#ch1')">1 · The Trade</button>
+    <button class="ch-btn" onclick="scrollTo('#ch2')">2 · Safety</button>
+    <button class="ch-btn" onclick="scrollTo('#ch3')">3 · Certifications</button>
+    <button class="ch-btn" onclick="scrollTo('#ch4')">4 · Tools</button>
+    <button class="ch-btn" onclick="scrollTo('#ch5')">5 · Surface Prep</button>
+    <button class="ch-btn" onclick="scrollTo('#ch6')">6 · Paint & Materials</button>
+    <button class="ch-btn" onclick="scrollTo('#ch7')">7 · Interior Painting</button>
+    <button class="ch-btn" onclick="scrollTo('#ch8')">8 · Exterior Painting</button>
+    <button class="ch-btn" onclick="scrollTo('#ch9')">9 · Specialty Finishes</button>
+    <button class="ch-btn" onclick="scrollTo('#ch10')">10 · Estimating & Business</button>
+    <button class="ch-btn" onclick="scrollTo('#ch11')">11 · Getting Hired</button>
+  </div>
+</div>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar-wrap">
+  <span class="progress-label">Your progress</span>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill" style="width:0%"></div>
+  </div>
+  <span class="progress-count" id="progressCount">0 / 12 chapters</span>
+  <button class="reset-btn" onclick="resetProgress()">↺ reset</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🏗️ Darco Inc · Construction Painting Career Program</div>
+  <h1>From <em>knowing nothing</em><br>to getting hired.</h1>
+  <p class="hero-sub">This course is for the <strong>construction painting trade</strong> — painting homes, commercial buildings, and structures for a living. Not art. Not decorating. A skilled, in-demand trade career that you can start without a degree, build into a full-time income, and eventually own as your own business.</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">12</span>
+      <span class="hero-stat-label">Chapters</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">3–4 mo</span>
+      <span class="hero-stat-label">To job-ready as helper</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">$20–$30</span>
+      <span class="hero-stat-label">Starting helper pay</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">USA</span>
+      <span class="hero-stat-label">Focused</span>
+    </div>
+  </div>
+  <a href="#ch0" class="hero-cta">Begin Chapter 0 →</a>
+</section>
+
+<!-- CHAPTER 0 -->
+<section class="chapter" id="ch0">
+  <div class="chapter-label">Chapter 0 · Orientation</div>
+  <h2>Before we begin — <em>a question for you.</em></h2>
+  <p>Before we teach you anything about painting, we want to ask you one thing. Take a moment. Be honest with yourself.</p>
+  <div class="callout info">
+    <span class="callout-icon">🏗️</span> <strong>This is a construction trade course.</strong> It covers professional painting of homes, commercial buildings, and structures — surface prep, primers, coatings, tools, safety, and how to get hired. It is not an art course, a decorating course, or a DIY course.
+  </div>
+
+  <p>Before we teach you anything, we want to ask you one thing. Take a moment. Be honest with yourself.</p>
+  <div class="callout">
+    <span class="callout-icon">💭</span> What do you think a professional construction painter actually does all day?
+  </div>
+  <p>Write it down, say it out loud, or just think about it. By the time you finish this course, your answer will be completely different — and that's exactly the point.</p>
+
+  <h3>What this course is — and what it isn't</h3>
+  <p>This course will give you the <strong>knowledge and know-how</strong> to become employable. It will teach you what every surface, tool, product, and technique is — and why it matters. It will prepare you to walk onto a job site, speak the language, follow direction, and start learning from day one.</p>
+  <p>What it won't do is replace practice. No course can. <strong>The real skills — the clean cut line, the smooth roll, the perfect prep — those come from repetition on the job.</strong> Every painter you'll ever admire got good the same way: they showed up, they paid attention, and they practiced. Over and over.</p>
+  <p>Your goal right now is simple: <strong>become employable.</strong> Get hired. Get on a job site. Everything else follows from there.</p>
+
+  <h3>So what <em>is</em> this trade, really?</h3>
+  <p>Most people picture a painter as someone rolling white paint on a bedroom wall. That's like saying a chef is someone who boils pasta. It's not wrong — it's just a tiny sliver of a much bigger world.</p>
+  <p>Professional painters are the people who transform spaces. Before a building is handed over, before a family moves in, before a hotel reopens — painters are the last trade to touch every surface. They protect buildings from the elements, restore surfaces that would otherwise deteriorate, and turn raw structures into finished, livable spaces.</p>
+  <p>They work on homes, commercial buildings, schools, hospitals, bridges, industrial facilities, and everything in between. They apply paint, stain, varnish, lacquer, epoxy coatings, and waterproofing systems. They read blueprints, calculate materials, manage crews, and build businesses.</p>
+  <blockquote style="border-left:3px solid var(--accent);padding:12px 20px;margin:24px 0;color:var(--text-muted);font-style:italic;">
+    "Most beginners think: 'I need to learn how to paint.' Pros know: 'I need to learn prep, consistency, and efficiency.' That's the difference between a $20/hour painter and a $300–$1,000/day contractor."
+  </blockquote>
+
+  <h3>Why this course exists</h3>
+  <p>Darco Inc created this course because the path into the painting trade is unnecessarily confusing for beginners. This course gives you everything you need to get hired — the vocabulary, the knowledge, the certifications, and the confidence. Once you're on a job site, <strong>practice does the rest.</strong> That's how every professional painter got where they are.</p>
+
+  <h3>What you'll know by the end</h3>
+  <h4>Knowledge you'll build</h4>
+  <ul>
+    <li>How professional painters prep surfaces — the step most beginners skip entirely</li>
+    <li>Every tool a painter carries and what each one does</li>
+    <li>Paint types, finishes, and how to choose the right product for every surface</li>
+    <li>Interior and exterior painting techniques used by working pros</li>
+    <li>How to estimate materials and bid a job — what separates workers from business owners</li>
+    <li>Safety rules that will protect you on every job site</li>
+    <li>How to get hired as a helper with zero experience</li>
+  </ul>
+  <h4>Credentials you'll earn</h4>
+  <ul>
+    <li>OSHA 10 Construction Safety card (covered in Chapter 2)</li>
+    <li>PCA Painter Training certificate (free videos via PCA Overdrive)</li>
+    <li>A resume that stands out in any interview</li>
+    <li>The vocabulary and knowledge to speak confidently on a job site from day one</li>
+  </ul>
+
+  <h3>Your 3–4 month study plan</h3>
+  <div class="week-plan">
+    <div class="week-item">
+      <div class="week-header">
+        <div class="week-num">Month 1<br><span style="font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text-dim)">Weeks 1–4</span></div>
+        <div><div class="week-title">Orientation, Trade, Safety & Certifications</div><div class="week-subtitle">Chapters 0–3</div></div>
+      </div>
+      <div class="week-body">Understand the career, the culture, and how to stay safe. Get your OSHA 10 done.<div class="week-milestone">🎯 Complete OSHA 10 this month</div></div>
+    </div>
+    <div class="week-item">
+      <div class="week-header">
+        <div class="week-num">Month 2<br><span style="font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text-dim)">Weeks 5–8</span></div>
+        <div><div class="week-title">Tools, Surface Prep & Paint Knowledge</div><div class="week-subtitle">Chapters 4–6</div></div>
+      </div>
+      <div class="week-body">Learn every tool, master the prep process, and understand how to choose the right products.<div class="week-milestone">🎯 Start PCA Overdrive training</div></div>
+    </div>
+    <div class="week-item">
+      <div class="week-header">
+        <div class="week-num">Month 3<br><span style="font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text-dim)">Weeks 9–12</span></div>
+        <div><div class="week-title">Interior, Exterior & Specialty Techniques</div><div class="week-subtitle">Chapters 7–9</div></div>
+      </div>
+      <div class="week-body">The hands-on chapters. Study cutting in, rolling, brush technique, exterior painting, and specialty finishes.<div class="week-milestone">🎯 Complete PCA Overdrive videos</div></div>
+    </div>
+    <div class="week-item">
+      <div class="week-header">
+        <div class="week-num">Month 4<br><span style="font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text-dim)">Weeks 13–16</span></div>
+        <div><div class="week-title">Estimating, Business & Getting Hired</div><div class="week-subtitle">Chapters 10–11</div></div>
+      </div>
+      <div class="week-body">Learn the math that makes you profitable, then apply to at least 10 painting companies.<div class="week-milestone">🎯 Submit your first applications</div></div>
+    </div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Quiz</div>
+    <div class="quiz-subtitle">Chapter 0 — Welcome · Understood the overview and study plan?</div>
+    <button class="complete-btn" id="btn-ch0" onclick="markComplete('ch0', this)">✓ Mark Chapter 0 Complete</button>
+    <div class="chapter-nav">
+      <span style="font-size:13px;color:var(--text-dim)">Chapter 0 of 12</span>
+      <a href="#ch1" class="next-chapter-link">Next: Chapter 1 — The Trade →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 1 -->
+<section class="chapter" id="ch1">
+  <div class="chapter-label">Chapter 1 · The Trade</div>
+  <h2>The world you're <em>about to enter.</em></h2>
+  <p>Before you hold a brush professionally, you need to understand what you're walking into — the career arc, the earning potential, and what employers are actually looking for on day one. Knowledge gets you hired. Practice makes you great.</p>
+
+  <h3>The numbers don't lie</h3>
+  <p>The U.S. Bureau of Labor Statistics projects approximately <strong>16,500 new painter job openings every year</strong> through 2032. The median annual wage for painters in 2024 was around <strong>$48,990</strong>, with top earners in commercial and industrial work exceeding $80,000–$100,000. Painting contractors who build their own businesses regularly earn $150,000–$300,000 per year.</p>
+  <p><strong>You don't need a four-year degree.</strong> No student debt. No years in a classroom before you earn your first dollar. The painting trade is one of the few remaining careers in America where you can start earning real money within weeks of your first day of study.</p>
+
+  <h3>Your career arc — what to expect</h3>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-marker"><div class="timeline-dot">H</div><div class="timeline-line"></div></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Painter's Helper / Laborer</div>
+        <div class="timeline-pay">Months 1–12 · $20–$25/hr</div>
+        <div class="timeline-desc">This is where you start. No license needed. No experience required. You prep surfaces, move materials, mask off areas, clean up, and watch everything. Every day on the job is an education you get paid for.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker"><div class="timeline-dot">A</div><div class="timeline-line"></div></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Journeyman Painter</div>
+        <div class="timeline-pay">Years 1–4 · $25–$40/hr</div>
+        <div class="timeline-desc">You're trusted with real work. You handle full interior and exterior projects, cut in clean lines, manage your own materials, and operate independently. This is the backbone of any crew.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker"><div class="timeline-dot">L</div><div class="timeline-line"></div></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Lead Painter / Foreman</div>
+        <div class="timeline-pay">Years 3–6 · $35–$55/hr</div>
+        <div class="timeline-desc">You manage crews, oversee quality, communicate with clients, and ensure jobs run on schedule. This is where leadership skills start paying dividends.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker"><div class="timeline-dot">O</div></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Painting Contractor / Business Owner</div>
+        <div class="timeline-pay">Years 4–8+ · $100K–$300K+/yr</div>
+        <div class="timeline-desc">You bid jobs, manage multiple crews, handle business operations, and build a brand. Painters who make this leap often earn more than most college-educated professionals — without the debt.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <span class="callout-icon">💡</span> <strong>The secret most beginners don't know:</strong> The painting trade has no formal licensing requirement in most states to work as a helper or journeyman. You can start earning money this week, legally, while you learn. The business license comes later — when you're ready to work for yourself.
+  </div>
+
+  <h3>Watch — A real painter's career story</h3>
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">15 Years Solo — $100K+ Painting Business (Tim Oliphant)</div>
+      <div class="video-desc">Tim started painting in college and built a six-figure solo operation. He covers how he got started, what equipment he uses, how he prices jobs, how he markets his business, and what he wishes he'd known earlier. This is the real picture of where this career can take you.</div>
+      <div class="video-tags"><span class="tag">Real Career Story</span><span class="tag">Solo Business</span><span class="tag">$100K+</span><span class="tag">Marketing</span><span class="tag">Pricing</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/gowhOZsvdCs" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Quiz</div>
+    <div class="quiz-subtitle">Chapter 1 — The Trade · Watched the video and understand the career path?</div>
+    <button class="complete-btn" id="btn-ch1" onclick="markComplete('ch1', this)">✓ Mark Chapter 1 Complete</button>
+    <div class="chapter-nav">
+      <span style="font-size:13px;color:var(--text-dim)">Chapter 1 of 12</span>
+      <a href="#ch2" class="next-chapter-link">Next: Chapter 2 — Safety →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 2 -->
+<section class="chapter" id="ch2">
+  <div class="chapter-label">Chapter 2 · Safety</div>
+  <h2>Safety isn't a rule. <em>It's a culture.</em></h2>
+  <p>Every experienced painter will tell you the same thing: the most important skill in this trade isn't knowing how to roll a wall. It's knowing how to come home safe every day.</p>
+
+  <h3>Why safety comes first</h3>
+  <p>Painters work at heights, handle chemical products, and operate in tight or poorly ventilated spaces. Falls are the number one cause of construction fatalities in the United States. Paint fumes, solvents, and lead-based paint (found in older buildings) pose serious long-term health risks. None of these dangers are inevitable — they are all manageable with the right knowledge and habits.</p>
+
+  <h3>The four rules that protect you every day</h3>
+  <h4>Rule 1 — Ladder and scaffold safety</h4>
+  <ul>
+    <li>Inspect every ladder before use — check for cracks, loose rungs, and damaged feet</li>
+    <li>Set extension ladders at a 4:1 ratio (1 foot out for every 4 feet up)</li>
+    <li>Never overreach — your belt buckle should stay between the side rails</li>
+    <li>Three points of contact at all times: two hands, one foot or two feet, one hand</li>
+    <li>On scaffolding, always use guardrails and ensure planks are fully secured</li>
+  </ul>
+  <h4>Rule 2 — Chemical and fume safety</h4>
+  <ul>
+    <li>Always read the Safety Data Sheet (SDS) for every product you use</li>
+    <li>Oil-based paints, lacquers, and solvents require strong ventilation — open windows, use fans</li>
+    <li>Use a respirator (not just a dust mask) when spraying or working with oil-based products</li>
+    <li>Never mix unknown chemicals — some combinations produce toxic gases</li>
+    <li>Store solvents away from heat sources — they are highly flammable</li>
+  </ul>
+  <h4>Rule 3 — Lead paint awareness</h4>
+  <ul>
+    <li>Any building built before 1978 may contain lead-based paint</li>
+    <li>Sanding or scraping lead paint releases hazardous dust — use wet methods and HEPA respirators</li>
+    <li>EPA's Renovation, Repair and Painting (RRP) Rule requires certification before disturbing lead paint in pre-1978 residential buildings</li>
+    <li>If in doubt, test before you sand — lead test kits cost under $15 at any hardware store</li>
+  </ul>
+  <h4>Rule 4 — Use your PPE every time</h4>
+  <ul>
+    <li>Safety glasses — always when sanding, scraping, or painting overhead</li>
+    <li>Gloves — protect hands from solvents and chemicals</li>
+    <li>Respirator — required with sprayers, oil-based products, and in enclosed spaces</li>
+    <li>Non-slip footwear — essential on ladders and scaffolding</li>
+    <li>Drop cloths — protect floors from slipping hazards as well as drips</li>
+  </ul>
+
+  <div class="callout warning">
+    <span class="callout-icon">⚠️</span> <strong>The most dangerous words in the trade: "It's just latex — it'll be fine."</strong> Even water-based paints can irritate airways in enclosed spaces. Always ventilate. Always read the label. The painters who get hurt are the ones who skipped the safety step because they'd done it a hundred times before.
+  </div>
+
+  <h3>Your OSHA 10 — Start to Finish</h3>
+  <div class="cert-card">
+    <div class="cert-badge">Step 1<br>FREE</div>
+    <div class="cert-info">
+      <div class="cert-name">Watch the OSHA 10 free study playlist on YouTube</div>
+      <div class="cert-detail">11 free videos covering every module — fall protection, PPE, chemical hazards, struck-by hazards, and more. Watch these before you pay for anything. No signup required.</div>
+      <br><a href="https://www.youtube.com/playlist?list=PL0k4Uvrgzs7kcrbPY-WW39vc5nFZ3TOgv" class="cert-link" target="_blank">▶ Watch Free Playlist on YouTube ↗</a>
+    </div>
+  </div>
+  <div class="cert-card">
+    <div class="cert-badge">Step 2<br>FREE</div>
+    <div class="cert-info">
+      <div class="cert-name">Take a free OSHA 10 practice test</div>
+      <div class="cert-detail">30 questions from the actual exam bank. Free, instant results. Score above 70% and you're ready to enroll in the real thing.</div>
+      <br><a href="https://staycertified.co/osha-10-hour-construction-quiz-free-online-test/" class="cert-link" target="_blank">📝 Take Free Practice Test ↗</a>
+    </div>
+  </div>
+  <div class="cert-card">
+    <div class="cert-badge">Step 3<br>$30–50</div>
+    <div class="cert-info">
+      <div class="cert-name">Enroll and get your official DOL card</div>
+      <div class="cert-detail">Both providers below are OSHA-authorized. You'll receive a printable certificate immediately and your official plastic card by mail within 2 weeks. The card never expires.</div>
+      <br>
+      <a href="https://www.360training.com/course/osha-10-hour-outreach-construction-free-study-guide" class="cert-link" target="_blank">360training.com — ~$30–40 ↗</a> &nbsp;·&nbsp;
+      <a href="https://www.oshaoutreachcourses.com/osha-10-hour-construction" class="cert-link" target="_blank">OSHAOutreachCourses.com — ~$42–59 ↗</a>
+    </div>
+  </div>
+  <div class="callout warning">
+    <span class="callout-icon">⚠️</span> Never pay more than $60 for OSHA 10. The card is identical regardless of which authorized provider you use.
+  </div>
+
+  <h3>Watch — how to get your OSHA 10 certification</h3>
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">How to Get Your OSHA 10 Certification Online — Fast & Easy</div>
+      <div class="video-desc">A painter walks through the exact OSHA 10 enrollment process — where to sign up, what to expect, how long it takes, and what you get. Practical, no-fluff, from someone in the trade. Watch this before you enroll so you know exactly what you're doing.</div>
+      <div class="video-tags"><span class="tag">OSHA 10</span><span class="tag">Certification</span><span class="tag">Enrollment</span><span class="tag">Painter Perspective</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/VyBVTcLhLIw" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <h3>Watch — what the PCA painter training program looks like</h3>
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">PCA Painter Training — Overview (Painting Contractors Association)</div>
+      <div class="video-desc">The official PCA overview of their Painter Training program — what it covers, how it's structured, and what certificate you earn. This is the free video-only version on PCA Overdrive referenced in this chapter. Watch it, then go sign up for the free access at pcaoverdrive.org.</div>
+      <div class="video-tags"><span class="tag">PCA</span><span class="tag">Painter Training</span><span class="tag">Certificate</span><span class="tag">Official</span><span class="tag">Free</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/CAw9GJQRPWo" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">Painter Safety — Ladders, Chemicals & PPE</div>
+      <div class="video-desc">OSHA 10 study playlist — 11 free videos covering every safety module you'll be tested on. Watch these before you pay for the course.</div>
+      <div class="video-tags"><span class="tag">Safety</span><span class="tag">Ladders</span><span class="tag">PPE</span><span class="tag">OSHA 10 Prep</span><span class="tag">Free</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PL0k4Uvrgzs7kcrbPY-WW39vc5nFZ3TOgv" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Quiz</div>
+    <div class="quiz-subtitle">Chapter 2 — Safety · Started your OSHA 10 and understand the safety rules?</div>
+    <button class="complete-btn" id="btn-ch2" onclick="markComplete('ch2', this)">✓ Mark Chapter 2 Complete</button>
+    <div class="chapter-nav">
+      <span style="font-size:13px;color:var(--text-dim)">Chapter 2 of 12</span>
+      <a href="#ch3" class="next-chapter-link">Next: Chapter 3 — Certifications →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 3 -->
+<section class="chapter" id="ch3">
+  <div class="chapter-label">Chapter 3 · Certifications</div>
+  <h2>The credentials that <em>get you hired.</em></h2>
+  <p>Most beginners apply for jobs with a blank resume. Here's how to make sure you're not one of them — with certifications you can earn before you ever set foot on a job site.</p>
+
+  <div class="callout tip">
+    <span class="callout-icon">⭐</span> <strong>Your OSHA 10 is already covered in Chapter 2.</strong> Start that first. Then work on PCA Overdrive and the other credentials below while you study the rest of this course.
+  </div>
+
+  <h3>Get these <em>before</em> you apply</h3>
+  <div class="cert-card">
+    <div class="cert-badge">⭐ Early<br>FREE</div>
+    <div class="cert-info">
+      <div class="cert-name">PCA Overdrive — Painter Training (Video Series)</div>
+      <div class="cert-detail">Free video-on-demand training from the Painting Contractors Association, supported by Sherwin-Williams, PPG, and Benjamin Moore. Covers Introduction to the Trade, Interior Levels 1–3, and Exterior Levels 1–3. Watch on the web or mobile app.</div>
+      <br><a href="https://www.pcaoverdrive.org/painter-training" class="cert-link" target="_blank">Watch on PCA Overdrive ↗</a>
+    </div>
+  </div>
+  <div class="cert-card">
+    <div class="cert-badge">Early<br>$99</div>
+    <div class="cert-info">
+      <div class="cert-name">PCA Premium Training Portal — Certificate of Completion</div>
+      <div class="cert-detail">Full training portal with sequential video topics, knowledge-check quizzes after each video, and a digital certificate of completion. $99 per course for non-members. This certificate on your resume signals serious commitment to any employer.</div>
+      <br><a href="https://pca.so/courses" class="cert-link" target="_blank">Enroll at PCA ↗</a>
+    </div>
+  </div>
+
+  <h3>Get these in your <em>first 1–2 years</em></h3>
+  <div class="cert-card">
+    <div class="cert-badge">Year 1<br>$30–80</div>
+    <div class="cert-info">
+      <div class="cert-name">First Aid / CPR + AED</div>
+      <div class="cert-detail">Required on most commercial job sites. Fast, affordable, universally respected. Renews every 2 years.</div>
+      <br><a href="https://www.redcross.org/take-a-class" class="cert-link" target="_blank">Red Cross ↗</a>
+    </div>
+  </div>
+  <div class="cert-card">
+    <div class="cert-badge">Year 1<br>$150–250</div>
+    <div class="cert-info">
+      <div class="cert-name">OSHA 30 — Construction (Upgrade)</div>
+      <div class="cert-detail">Goes deeper into all construction hazards. Valued for anyone moving into lead or foreman roles. 30 hours online.</div>
+      <br><a href="https://www.oshaoutreachcourses.com" class="cert-link" target="_blank">OSHAOutreachCourses.com ↗</a>
+    </div>
+  </div>
+
+  <h3>Longer-term — <em>years 2–5</em></h3>
+  <div class="cert-card">
+    <div class="cert-badge">Years 2–4<br>Varies</div>
+    <div class="cert-info">
+      <div class="cert-name">EPA RRP Certification — Lead Renovator</div>
+      <div class="cert-detail">Required by federal law before disturbing lead paint in pre-1978 residential buildings. Opens up a huge market that uncertified painters legally cannot touch. 8-hour course, renews every 5 years.</div>
+      <br><a href="https://www.epa.gov/lead/renovation-repair-and-painting-program" class="cert-link" target="_blank">EPA RRP Info ↗</a>
+    </div>
+  </div>
+  <div class="cert-card">
+    <div class="cert-badge">Years 3–5<br>Varies</div>
+    <div class="cert-info">
+      <div class="cert-name">PDCA Craftsman Certification</div>
+      <div class="cert-detail">Industry-recognized credential from the Painting and Decorating Contractors of America. Demonstrates mastery of professional standards. Valued by commercial clients and large contractors.</div>
+      <br><a href="https://www.pcapainted.org/training" class="cert-link" target="_blank">PCA Training ↗</a>
+    </div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Quiz</div>
+    <div class="quiz-subtitle">Chapter 3 — Certifications · Know your credential roadmap?</div>
+    <button class="complete-btn" id="btn-ch3" onclick="markComplete('ch3', this)">✓ Mark Chapter 3 Complete</button>
+    <div class="chapter-nav">
+      <span style="font-size:13px;color:var(--text-dim)">Chapter 3 of 12</span>
+      <a href="#ch4" class="next-chapter-link">Next: Chapter 4 — Tools →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 4 -->
+<section class="chapter" id="ch4">
+  <div class="chapter-label">Chapter 4 · Tools</div>
+  <h2>The tools of <em>the trade.</em></h2>
+  <p>A professional painter is only as good as their tools — and knowing every tool by name and function before your first day immediately marks you as serious.</p>
+
+  <div class="callout tip">
+    <span class="callout-icon">🛒</span> <strong>What to buy first:</strong> A quality 2" angled brush (~$15), a 9" roller frame + 3/8" nap cover (~$20), a roller tray, and a 5-in-1 tool (~$12). These four items cover 80% of what a helper needs and cost under $60 total.
+  </div>
+
+  <h3>Brushes — your most precise tool</h3>
+  <div class="tool-grid">
+    <div class="tool-card"><div class="tool-icon">🖌️</div><div class="tool-name">2" Angled Sash Brush</div><div class="tool-desc">Your workhorse for cutting in at edges, trim, and corners. The angled tip gives you control where rollers can't reach.</div></div>
+    <div class="tool-card"><div class="tool-icon">🖌️</div><div class="tool-name">3–4" Wide Brush</div><div class="tool-desc">For painting large flat areas by hand, wide trim, and doors. Covers ground fast.</div></div>
+    <div class="tool-card"><div class="tool-icon">🖌️</div><div class="tool-name">1" Trim Brush</div><div class="tool-desc">Detail work in tight spaces — window muntins, narrow trim, and touch-ups.</div></div>
+  </div>
+  <div class="callout info">
+    <span class="callout-icon">ℹ️</span> <strong>Synthetic vs. Natural bristles:</strong> Use <strong>synthetic (nylon/polyester)</strong> brushes for latex (water-based) paints — they hold their shape. Use <strong>natural bristle</strong> brushes for oil-based paints and stains. Never use a natural bristle brush with latex — it will go limp and ruin your work.
+  </div>
+
+  <h3>Rollers — covering ground fast</h3>
+  <table class="data-table">
+    <thead><tr><th>Nap Length</th><th>Best For</th><th>Finish Result</th></tr></thead>
+    <tbody>
+      <tr><td>1/4" (short nap)</td><td>Smooth walls, semi-gloss, ceilings</td><td>Very smooth, minimal texture</td></tr>
+      <tr><td>3/8–1/2" (medium)</td><td>Most interior walls, standard drywall</td><td>Light texture, professional standard</td></tr>
+      <tr><td>3/4–1" (long nap)</td><td>Textured walls, rough surfaces, masonry</td><td>Heavy texture, more paint applied</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Essential hand tools</h3>
+  <div class="tool-grid">
+    <div class="tool-card"><div class="tool-icon">🔧</div><div class="tool-name">5-in-1 Tool</div><div class="tool-desc">The Swiss Army knife of painting. Scrapes, opens cans, cleans rollers, removes nails, and gouges out cracks.</div></div>
+    <div class="tool-card"><div class="tool-icon">📏</div><div class="tool-name">Putty Knife / Scraper</div><div class="tool-desc">For applying spackle, scraping old paint, and feathering patch edges smooth.</div></div>
+    <div class="tool-card"><div class="tool-icon">🎭</div><div class="tool-name">Caulk Gun</div><div class="tool-desc">For sealing gaps between trim and walls before painting. Creates clean, professional lines.</div></div>
+    <div class="tool-card"><div class="tool-icon">📐</div><div class="tool-name">Painter's Tape</div><div class="tool-desc">Protects areas you don't want painted. Invest in quality tape — cheap tape bleeds and leaves residue.</div></div>
+    <div class="tool-card"><div class="tool-icon">🛡️</div><div class="tool-name">Drop Cloths</div><div class="tool-desc">Canvas for professional work (reusable, doesn't slip). Plastic for budget jobs. Protect floors and furniture always.</div></div>
+    <div class="tool-card"><div class="tool-icon">📦</div><div class="tool-name">Extension Pole</div><div class="tool-desc">Attaches to rollers for ceilings and high walls. Saves your back and reduces ladder time.</div></div>
+  </div>
+
+  <h3>Spray equipment</h3>
+  <p>Sprayers are used for large commercial jobs, cabinets, doors, and fast production work. You won't use them on day one, but know what they are.</p>
+  <div class="tool-grid">
+    <div class="tool-card"><div class="tool-icon">💨</div><div class="tool-name">HVLP Sprayer</div><div class="tool-desc">High Volume Low Pressure. Better control, less overspray. Ideal for cabinets, furniture, and detailed work.</div></div>
+    <div class="tool-card"><div class="tool-icon">⚡</div><div class="tool-name">Airless Sprayer</div><div class="tool-desc">Powerful, fast coverage on large surfaces. Standard on commercial jobs. Requires masking everything nearby.</div></div>
+    <div class="tool-card"><div class="tool-icon">🔫</div><div class="tool-name">Handheld Sprayer</div><div class="tool-desc">Small battery-powered units for quick touch-ups and small projects. Good starter tool to learn spray technique.</div></div>
+  </div>
+
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">How to Paint Like a Pro — The Complete Rig & Tools</div>
+      <div class="video-desc">A working painter walks through his complete setup — tray, liner, cage, Wooster Sherlock handle, extension pole, microfiber roller, angle brush, and 5-in-1 tool. Exactly what's covered in this chapter, shown in action.</div>
+      <div class="video-tags"><span class="tag">Tools</span><span class="tag">The Rig</span><span class="tag">Beginner</span><span class="tag">Extension Pole</span><span class="tag">Brushes</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/bLbUIevOxzY" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Quiz</div>
+    <div class="quiz-subtitle">Chapter 4 — Tools · Can you name every tool and what it does?</div>
+    <button class="complete-btn" id="btn-ch4" onclick="markComplete('ch4', this)">✓ Mark Chapter 4 Complete</button>
+    <div class="chapter-nav">
+      <span style="font-size:13px;color:var(--text-dim)">Chapter 4 of 12</span>
+      <a href="#ch5" class="next-chapter-link">Next: Chapter 5 — Surface Prep →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 5 -->
+<section class="chapter" id="ch5">
+  <div class="chapter-label">Chapter 5 · Surface Preparation</div>
+  <h2>Where pros <em>separate themselves.</em></h2>
+  <blockquote style="border-left:3px solid var(--accent);padding:12px 20px;margin:0 0 24px;color:var(--text-muted);font-style:italic;">"Bad prep = peeling paint, callbacks, angry clients. Surface preparation is 70% of the job."</blockquote>
+  <p>Here is the single most important lesson in this entire course: <strong>the quality of a paint job is determined before a drop of paint is ever applied.</strong> Professional painters obsess over prep. Beginners rush past it. That difference is visible in the finished work — and it's the difference between a one-time job and a referral business.</p>
+
+  <h3>Cleaning surfaces</h3>
+  <ul>
+    <li>Remove all dirt, grease, and grime — paint will not adhere to contaminated surfaces</li>
+    <li>Use TSP (trisodium phosphate) or a TSP substitute for kitchen walls, high-grease areas</li>
+    <li>Use mildicide cleaner on any surface with mold or mildew — never paint over mold</li>
+    <li>Allow surfaces to dry completely before any further prep or painting</li>
+    <li>On exterior surfaces, pressure washing is standard — but control the pressure to avoid surface damage</li>
+  </ul>
+
+  <h3>Repairing damage</h3>
+  <ul>
+    <li><strong>Small holes (under 1/2"):</strong> Fill with lightweight spackle, allow to dry, sand smooth</li>
+    <li><strong>Medium holes (1/2"–3"):</strong> Use a mesh patch kit or self-adhesive patch, apply joint compound in thin coats, sand between coats</li>
+    <li><strong>Large holes:</strong> Cut out the damaged section and install a backing board — then patch with drywall and joint compound</li>
+    <li><strong>Cracks:</strong> Widen the crack slightly, fill with flexible caulk or joint compound depending on location</li>
+    <li><strong>Woodwork gaps:</strong> Always caulk the joint between trim and wall before painting — this creates the clean, professional line clients expect</li>
+  </ul>
+
+  <h3>Sanding</h3>
+  <ul>
+    <li>Lightly sand any glossy surfaces before painting — paint slides off gloss without this step</li>
+    <li>Sand all patches smooth — run your hand over them. If you can feel it, you'll see it once painted.</li>
+    <li>Use a sanding sponge or hand block for walls; a pole sander for large flat areas</li>
+    <li>Always wipe sanding dust with a tack cloth or damp rag before painting</li>
+  </ul>
+  <table class="data-table">
+    <thead><tr><th>Grit</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td>60–80 grit</td><td>Removing old paint, rough wood, heavy material removal</td></tr>
+      <tr><td>100–120 grit</td><td>General surface prep, smoothing patches</td></tr>
+      <tr><td>150–180 grit</td><td>Final prep before painting, light scuffing of gloss</td></tr>
+      <tr><td>220 grit</td><td>Between coats for ultra-smooth finish, cabinets and trim</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Priming — the step beginners skip</h3>
+  <p>Primer is not optional. It is the foundation that determines whether your paint job lasts 2 years or 10.</p>
+  <ul>
+    <li><strong>New drywall:</strong> Always prime — raw drywall absorbs paint unevenly (called "flashing")</li>
+    <li><strong>Repairs and patches:</strong> Always prime — patches absorb differently than surrounding wall</li>
+    <li><strong>Color changes (dark to light):</strong> Use a tinted primer to reduce coats needed</li>
+    <li><strong>Stains (water, smoke, nicotine):</strong> Use a stain-blocking primer (Zinsser BIN or Kilz) — regular primer will not block these</li>
+    <li><strong>Bare wood:</strong> Always prime exterior wood before painting</li>
+  </ul>
+  <div class="callout warning">
+    <span class="callout-icon">⚠️</span> Skipping primer on stains is the most common beginner mistake. Apply two coats of regular paint over a water stain and it will bleed back through both coats. Use Zinsser BIN (shellac-based) and it disappears permanently.
+  </div>
+
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">Interior Painting Step 1 — Prepping a Room (John Burbidge, 1.2M views)</div>
+      <div class="video-desc">John Burbidge — author of "Watching Paint Dry" — walks through the complete room prep sequence: clearing the space, spackling nail holes, sanding, caulking, masking, and priming. This is the step most beginners skip, and it's the step that determines everything.</div>
+      <div class="video-tags"><span class="tag">Surface Prep</span><span class="tag">Spackling</span><span class="tag">Caulking</span><span class="tag">Priming</span><span class="tag">Step-by-Step</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/oNagIA8sKY0" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Quiz</div>
+    <div class="quiz-subtitle">Chapter 5 — Surface Prep · Could you walk onto a job and prep a room correctly?</div>
+    <button class="complete-btn" id="btn-ch5" onclick="markComplete('ch5', this)">✓ Mark Chapter 5 Complete</button>
+    <div class="chapter-nav">
+      <span style="font-size:13px;color:var(--text-dim)">Chapter 5 of 12</span>
+      <a href="#ch6" class="next-chapter-link">Next: Chapter 6 — Paint & Materials →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 6 -->
+<section class="chapter" id="ch6">
+  <div class="chapter-label">Chapter 6 · Paint & Materials</div>
+  <h2>Choosing the right <em>product for every job.</em></h2>
+  <p>Walk into any paint store and you'll face hundreds of products. Knowing how to choose quickly and correctly is a skill that separates professional painters from amateurs — and it's something employers will test you on immediately.</p>
+
+  <h3>Latex vs. Oil-Based paint</h3>
+  <table class="data-table">
+    <thead><tr><th>Property</th><th>Latex (Water-Based)</th><th>Oil-Based</th></tr></thead>
+    <tbody>
+      <tr><td>Cleanup</td><td>Water and soap</td><td>Mineral spirits / solvents</td></tr>
+      <tr><td>Dry time</td><td>1–2 hours between coats</td><td>8–24 hours between coats</td></tr>
+      <tr><td>Durability</td><td>Good — improves with acrylic</td><td>Excellent — very hard finish</td></tr>
+      <tr><td>Fumes</td><td>Low VOC, indoor-friendly</td><td>High VOC, strong ventilation required</td></tr>
+      <tr><td>Best use</td><td>Walls, ceilings, most interior work</td><td>Trim, cabinets, doors, high-wear surfaces</td></tr>
+      <tr><td>Trend</td><td>Industry standard for most work</td><td>Being replaced by waterborne alkyd in many applications</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Paint finishes — know when to use each</h3>
+  <div class="tool-grid">
+    <div class="tool-card"><div class="tool-icon">⬜</div><div class="tool-name">Flat / Matte</div><div class="tool-desc">Hides imperfections best. Low light reflection. Use on ceilings and low-traffic walls. Shows scuffs — not washable.</div></div>
+    <div class="tool-card"><div class="tool-icon">🥚</div><div class="tool-name">Eggshell</div><div class="tool-desc">Slight sheen. More durable than flat. The standard finish for most interior walls. Easy to wipe clean.</div></div>
+    <div class="tool-card"><div class="tool-icon">✨</div><div class="tool-name">Satin</div><div class="tool-desc">Smooth, moderate sheen. More durable and washable. Good for hallways, kitchens, kids' rooms.</div></div>
+    <div class="tool-card"><div class="tool-icon">💡</div><div class="tool-name">Semi-Gloss</div><div class="tool-desc">Noticeably shiny. Highly durable and washable. Standard for trim, doors, and bathrooms.</div></div>
+    <div class="tool-card"><div class="tool-icon">🪞</div><div class="tool-name">Gloss</div><div class="tool-desc">High shine. Hardest finish. Best for furniture, cabinets, and exterior trim that takes the most punishment.</div></div>
+  </div>
+  <div class="callout info">
+    <span class="callout-icon">ℹ️</span> <strong>Quick rule:</strong> Higher sheen = more durable and washable, but shows surface imperfections more. Lower sheen = hides imperfections better, but marks more easily. Always match the finish to the use case.
+  </div>
+
+  <h3>Interior vs. Exterior paint — never swap them</h3>
+  <ul>
+    <li>Exterior paints contain mildewcides, UV inhibitors, and flexibility agents to handle weather changes. Used indoors, they off-gas harmful chemicals.</li>
+    <li>Interior paints are formulated for indoor air quality. Used outdoors, they will peel, fade, and fail quickly.</li>
+    <li>This is not a cost-saving opportunity. Using the wrong product creates costly callbacks and damages your reputation.</li>
+  </ul>
+
+  <h3>Specialty products you'll encounter</h3>
+  <ul>
+    <li><strong>Stain-blocking primer (Zinsser BIN, Kilz):</strong> Blocks water stains, smoke, and nicotine permanently</li>
+    <li><strong>Masonry paint:</strong> Breathable, flexible. Required for concrete blocks, brick, and stucco</li>
+    <li><strong>Epoxy floor coating:</strong> For garage floors and industrial surfaces — two-part system, very durable</li>
+    <li><strong>Elastomeric paint:</strong> Bridges hairline cracks in stucco and masonry — flexible when dry</li>
+    <li><strong>Waterborne alkyd:</strong> Oil-like finish with latex cleanup. Increasingly standard for trim and cabinets</li>
+  </ul>
+
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">Paint Sheens Explained — Which Paint Finish to Use? (December 2024)</div>
+      <div class="video-desc">Every finish from flat to high gloss explained clearly — what each one looks like, how durable it is, where it's used, and why. By the end of this video you'll be able to walk into any job and immediately know what sheen belongs on every surface in the room.</div>
+      <div class="video-tags"><span class="tag">Paint Sheens</span><span class="tag">Flat</span><span class="tag">Eggshell</span><span class="tag">Satin</span><span class="tag">Semi-Gloss</span><span class="tag">2024</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/Avp_0KJhUbQ" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Quiz</div>
+    <div class="quiz-subtitle">Chapter 6 — Paint & Materials · Could you choose the right product for any surface?</div>
+    <button class="complete-btn" id="btn-ch6" onclick="markComplete('ch6', this)">✓ Mark Chapter 6 Complete</button>
+    <div class="chapter-nav">
+      <span style="font-size:13px;color:var(--text-dim)">Chapter 6 of 12</span>
+      <a href="#ch7" class="next-chapter-link">Next: Chapter 7 — Interior Painting →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 7 -->
+<section class="chapter" id="ch7">
+  <div class="chapter-label">Chapter 7 · Interior Painting</div>
+  <h2>The technique that makes <em>jobs look professional.</em></h2>
+  <p>Interior painting is where most painters spend the majority of their time. Done right, it looks effortless. Done wrong, every flaw is visible every time the light hits the wall. Here is exactly how the pros do it.</p>
+
+  <h3>The professional sequence — always follow this order</h3>
+  <ol>
+    <li>Protect floors, furniture, and fixtures (drop cloths, masking, plastic)</li>
+    <li>Remove outlet and switch plate covers</li>
+    <li>Complete all surface prep (patch, sand, caulk, prime)</li>
+    <li>Paint the ceiling first</li>
+    <li>Paint the walls (cut in first, then roll)</li>
+    <li>Paint the trim and doors last</li>
+  </ol>
+  <div class="callout tip">
+    <span class="callout-icon">💡</span> Always paint top to bottom and trim last. If you drip on the wall from the ceiling, you'll paint over it when you do the walls. If you drip on the trim from the walls, you'll paint over it when you do the trim.
+  </div>
+
+  <h3>Cutting in — the skill that defines your quality</h3>
+  <p>Cutting in means painting a clean 2–3 inch border with a brush along all edges, corners, and trim before rolling. This is the single most visible skill a painter has. Clean cuts = professional work. Sloppy cuts = constant touch-ups and unhappy clients.</p>
+  <ul>
+    <li>Load your angled brush — don't overload, about 1/3 of the bristles into the paint</li>
+    <li>Start about 1/2" from the edge and work toward it, letting the bristle tip do the work</li>
+    <li>Use a steady, smooth stroke — don't rush</li>
+    <li>Keep a wet edge — if your cut line dries before you roll, you'll see a line</li>
+    <li>Practice on cardboard before your first job — even experienced painters warm up</li>
+  </ul>
+
+  <h3>Rolling technique</h3>
+  <ul>
+    <li>Load roller fully — roll out excess on the tray grid until the roller is evenly saturated</li>
+    <li>Apply with a "W" or "M" pattern, then fill in without lifting the roller</li>
+    <li>Maintain consistent pressure — don't press harder in some areas than others</li>
+    <li>Keep a wet edge — always roll back into the section you just painted before it dries</li>
+    <li>Work in sections of about 4' x 4'</li>
+    <li>Finish with light vertical strokes from top to bottom to eliminate roller marks</li>
+  </ul>
+
+  <h3>Painting trim and woodwork</h3>
+  <ul>
+    <li>Paint with the grain — always stroke in the direction the wood runs</li>
+    <li>Use long, smooth strokes — avoid short, choppy strokes that create lap marks</li>
+    <li>Don't overwork the paint — once it begins to set, leave it alone. Brushing into drying paint creates drag marks.</li>
+    <li>For doors: paint panels first, then rails (horizontal pieces), then stiles (vertical pieces), then edges last</li>
+    <li>For windows: paint muntins (dividers) first, then frames, then sills</li>
+  </ul>
+
+  <h3>Common problems and how to fix them</h3>
+  <table class="data-table">
+    <thead><tr><th>Problem</th><th>Cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Brush marks</td><td>Overworking paint or poor brush quality</td><td>Use quality brush, maintain wet edge, don't overbrush</td></tr>
+      <tr><td>Roller texture (stippling)</td><td>Wrong nap or too-dry roller</td><td>Match nap to surface, keep roller loaded</td></tr>
+      <tr><td>Drips and runs</td><td>Too much paint applied</td><td>Reduce load on brush/roller, catch and brush out immediately</td></tr>
+      <tr><td>Lap marks</td><td>Edges drying before overlap</td><td>Work faster, maintain wet edge, paint in smaller sections</td></tr>
+      <tr><td>Uneven sheen (flashing)</td><td>Inconsistent roller pressure or unprimed patches</td><td>Consistent pressure, always prime patches</td></tr>
+    </tbody>
+  </table>
+
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">Step 2 — Painting the Ceiling (John Burbidge, 2.3M views)</div>
+      <div class="video-desc">The ceiling always goes first. John Burbidge covers technique, keeping a wet edge, cutting in at the ceiling-wall junction, and rolling without visible marks. 2.3 million views for a reason.</div>
+      <div class="video-tags"><span class="tag">Ceilings</span><span class="tag">Wet Edge</span><span class="tag">Technique</span><span class="tag">Step 2</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/mNT3cpBa5HY" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">Step 3 — Painting the Walls (John Burbidge, 1M views)</div>
+      <div class="video-desc">How to cut in at the ceiling line, roll walls without marks, maintain a wet edge, and get consistent texture throughout. The core interior painting skill, shown step by step.</div>
+      <div class="video-tags"><span class="tag">Walls</span><span class="tag">Cut In</span><span class="tag">Rolling</span><span class="tag">Step 3</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/-v-KAOgFlVU" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">Step 4 — Painting the Trim (John Burbidge, 616K views)</div>
+      <div class="video-desc">Trim always goes last. Covers brushing with the grain, cutting clean lines at the wall-trim junction, painting doors and windows, and avoiding buildup in moving parts.</div>
+      <div class="video-tags"><span class="tag">Trim</span><span class="tag">Doors</span><span class="tag">Windows</span><span class="tag">Brush Technique</span><span class="tag">Step 4</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/dH-7rg2E8_I" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">Step 5 — Touch Up & Clean Up (John Burbidge)</div>
+      <div class="video-desc">How professionals finish a job — touching up missed spots, removing tape correctly, cleaning tools for reuse, and leaving the space cleaner than you found it. This step is what gets you rehired.</div>
+      <div class="video-tags"><span class="tag">Touch Up</span><span class="tag">Clean Up</span><span class="tag">Professionalism</span><span class="tag">Step 5</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/7a0qDvTQDLc" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Quiz</div>
+    <div class="quiz-subtitle">Chapter 7 — Interior Painting · Ready to walk into a room and paint it correctly?</div>
+    <button class="complete-btn" id="btn-ch7" onclick="markComplete('ch7', this)">✓ Mark Chapter 7 Complete</button>
+    <div class="chapter-nav">
+      <span style="font-size:13px;color:var(--text-dim)">Chapter 7 of 12</span>
+      <a href="#ch8" class="next-chapter-link">Next: Chapter 8 — Exterior Painting →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 8 -->
+<section class="chapter" id="ch8">
+  <div class="chapter-label">Chapter 8 · Exterior Painting</div>
+  <h2>The job that <em>weather controls.</em></h2>
+  <p>Exterior painting follows the same principles as interior — prep, prime, paint — but weather, surface variety, and scale make it its own discipline. The pro who understands exterior work will never run out of jobs.</p>
+
+  <h3>When to paint — and when to stop</h3>
+  <ul>
+    <li>Ideal temperature: 50°F–90°F. Below 50°F, paint won't cure properly. Above 90°F, it dries too fast and causes lap marks.</li>
+    <li>Never paint in direct sunlight — the surface temperature is often 20–30° hotter than air temperature</li>
+    <li>Don't paint if rain is expected within 24 hours</li>
+    <li>Humidity above 85% slows drying dramatically and can cause paint failure</li>
+    <li>Paint on the shaded side of a building, following the shade as the day progresses</li>
+  </ul>
+  <div class="callout warning">
+    <span class="callout-icon">⚠️</span> Painting over wet or damp wood is the most common cause of exterior paint failure. After rain, wait at least 24–48 hours. Test with a moisture meter — surface should read below 15% moisture content.
+  </div>
+
+  <h3>Exterior preparation — the full sequence</h3>
+  <ol>
+    <li><strong>Inspect:</strong> Check for rot, damaged siding, failed caulk, and deteriorated paint. Fix structural issues before painting.</li>
+    <li><strong>Clean:</strong> Pressure wash to remove dirt, mildew, and loose paint. Use a mildicide solution if mold is present.</li>
+    <li><strong>Scrape:</strong> Remove all loose and flaking paint — if it's not bonded, paint over it will fail too.</li>
+    <li><strong>Sand:</strong> Feather edges where old paint meets bare wood — visible ridges will show through the new coat.</li>
+    <li><strong>Caulk:</strong> Seal all gaps around windows, doors, trim joints, and siding seams. Use paintable exterior caulk.</li>
+    <li><strong>Prime:</strong> Prime all bare wood, repairs, and any areas where old paint was removed down to the substrate.</li>
+  </ol>
+
+  <h3>Exterior painting technique</h3>
+  <ul>
+    <li>Work from top to bottom — paint fascia and soffits first, then siding, then trim</li>
+    <li>On siding, paint the underside of the lap first, then the face</li>
+    <li>Use a brush for all trim and detail work; roller or sprayer for large flat siding areas</li>
+    <li>Maintain a wet edge — on large surfaces, work in manageable vertical sections</li>
+    <li>Back-brush sprayed surfaces — run a brush over freshly sprayed areas to work paint into the wood grain</li>
+  </ul>
+
+  <h3>Painting masonry (stucco, brick, concrete block)</h3>
+  <ul>
+    <li>Use masonry-specific paint — standard latex will not bond properly to most masonry</li>
+    <li>Fill cracks with masonry patching compound before painting</li>
+    <li>Remove efflorescence (white powder deposits) with a masonry cleaner before painting — paint will not bond over it</li>
+    <li>Apply two coats — masonry is highly porous and will absorb the first coat</li>
+    <li>Use a thick-nap roller (3/4"–1") to work paint into the texture</li>
+  </ul>
+
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">How to Paint an Exterior — 1 Painter, 6 Days, 3,500 Square Feet (Idaho Painter)</div>
+      <div class="video-desc">The Idaho Painter takes on a full 3,500 sq ft house exterior completely solo and documents every step — pressure washing, scraping, caulking, priming, masking, spraying, back-brushing, and trim. This is the most complete real-world exterior painting video available. Watch the full process before you ever pick up a brush outside.</div>
+      <div class="video-tags"><span class="tag">Exterior</span><span class="tag">Full Process</span><span class="tag">Solo Painter</span><span class="tag">Spray & Brush</span><span class="tag">Real Job</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/fc9LVhemD9k" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Quiz</div>
+    <div class="quiz-subtitle">Chapter 8 — Exterior Painting · Ready to handle an exterior job from start to finish?</div>
+    <button class="complete-btn" id="btn-ch8" onclick="markComplete('ch8', this)">✓ Mark Chapter 8 Complete</button>
+    <div class="chapter-nav">
+      <span style="font-size:13px;color:var(--text-dim)">Chapter 8 of 12</span>
+      <a href="#ch9" class="next-chapter-link">Next: Chapter 9 — Specialty Finishes →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 9 -->
+<section class="chapter" id="ch9">
+  <div class="chapter-label">Chapter 9 · Specialty Finishes</div>
+  <h2>Where you charge <em>more.</em></h2>
+  <p>Standard painting pays well. Specialty finishes pay better. These techniques set you apart from the $20/hour helper who only knows how to roll walls — and open the door to higher-end clients and bigger margins.</p>
+  <p>You don't need these on day one. Learn them after you're employed and comfortable with the basics. But know they exist and start watching pros do them.</p>
+
+  <h3>Spray painting — the production tool</h3>
+  <ul>
+    <li>Hold the sprayer 10–12" from the surface at all times</li>
+    <li>Move in smooth, overlapping strokes — overlap each pass by 50%</li>
+    <li>Keep the gun perpendicular to the surface — tilting creates uneven coverage</li>
+    <li>Trigger before reaching the surface, release after passing it — prevents heavy spots at each end</li>
+    <li>Multiple thin coats always beat one heavy coat — drips are almost impossible to fix cleanly</li>
+    <li>Mask everything nearby — overspray travels further than you think</li>
+  </ul>
+
+  <h3>Cabinet and furniture painting</h3>
+  <p>Cabinets are high-value work and clients pay premium prices for quality results. Mistakes are visible every day.</p>
+  <ul>
+    <li>Remove all doors and hardware — never paint cabinets in place</li>
+    <li>Clean thoroughly — kitchen grease prevents adhesion; use degreaser</li>
+    <li>Sand all surfaces to 150 grit, then 220 grit</li>
+    <li>Apply a bonding primer — Stix or BIN are the professional standards</li>
+    <li>Spray with an HVLP for the smoothest finish — no brush or roller marks</li>
+    <li>2–3 thin coats of waterborne alkyd enamel for maximum durability</li>
+    <li>Sand lightly between coats with 320 grit</li>
+  </ul>
+
+  <h3>Decorative and faux finishes</h3>
+  <ul>
+    <li><strong>Color washing:</strong> A diluted glaze applied over base coat and manipulated with a brush creates a soft, layered depth</li>
+    <li><strong>Sponging:</strong> Use a natural sea sponge to apply or remove glaze for organic texture</li>
+    <li><strong>Ragging:</strong> Crumpled rag creates patterns in wet glaze — each rag creates a unique texture</li>
+    <li><strong>Stippling:</strong> Brush is dabbed into wet glaze to create fine texture — classic for ceilings</li>
+    <li><strong>Stenciling:</strong> Secure stencil firmly, use a nearly dry brush in dabbing motions — never stroke the brush or paint bleeds under the edges</li>
+  </ul>
+
+  <h3>Texture coatings</h3>
+  <ul>
+    <li>Knockdown texture — joint compound applied by roller or sprayer, then partially smoothed with a knife</li>
+    <li>Orange peel texture — thin compound sprayed to create a bumpy texture resembling citrus skin</li>
+    <li>Skip trowel — compound applied by hand with a trowel in irregular overlapping passes</li>
+    <li>Smooth texture removal — skim coating over textured walls; high-value skill because almost no painters do it well</li>
+  </ul>
+
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">Tips Before Using Your Paint Sprayer — CJ Spray (2.5M views)</div>
+      <div class="video-desc">2.5 million views. Everything a beginner needs to know before picking up a sprayer — setup, pressure settings, distance, overlap, triggering technique, and avoiding the most common mistakes. Watch this before you ever touch a spray gun.</div>
+      <div class="video-tags"><span class="tag">Sprayer</span><span class="tag">HVLP</span><span class="tag">Airless</span><span class="tag">Technique</span><span class="tag">Beginner</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/u9IF-FFjSkM" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Quiz</div>
+    <div class="quiz-subtitle">Chapter 9 — Specialty Finishes · Know the techniques that increase your earning power?</div>
+    <button class="complete-btn" id="btn-ch9" onclick="markComplete('ch9', this)">✓ Mark Chapter 9 Complete</button>
+    <div class="chapter-nav">
+      <span style="font-size:13px;color:var(--text-dim)">Chapter 9 of 12</span>
+      <a href="#ch10" class="next-chapter-link">Next: Chapter 10 — Estimating & Business →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 10 -->
+<section class="chapter" id="ch10">
+  <div class="chapter-label">Chapter 10 · Estimating & Business Skills</div>
+  <h2>The math that makes <em>you profitable.</em></h2>
+  <p>Most painters who work for themselves fail not because they can't paint — but because they can't estimate. They underbid jobs, run out of money, and burn out. Learning to estimate properly is what separates a painter with a job from a painter with a business.</p>
+  <p>You don't need this on day one. But learn it while you're employed — because the sooner you understand the numbers, the sooner you can control them.</p>
+
+  <h3>Measuring square footage</h3>
+  <ul>
+    <li>Wall area: Measure width × height of each wall, add them together, subtract doors (20 sq ft each) and windows (15 sq ft each)</li>
+    <li>Ceiling area: Length × width of the room</li>
+    <li>Trim: Measure linear feet of baseboard, door casings, crown molding, and window trim</li>
+    <li>Rule of thumb: A gallon of latex paint covers 350–400 sq ft per coat on a smooth surface</li>
+  </ul>
+
+  <h3>Calculating materials</h3>
+  <table class="data-table">
+    <thead><tr><th>Item</th><th>Coverage</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Interior latex paint</td><td>350–400 sq ft/gallon</td><td>Reduce by 20% on textured surfaces</td></tr>
+      <tr><td>Exterior paint</td><td>250–350 sq ft/gallon</td><td>Rough siding may need more</td></tr>
+      <tr><td>Primer</td><td>300–400 sq ft/gallon</td><td>New drywall absorbs more — budget extra</td></tr>
+      <tr><td>Caulk (tube)</td><td>~35 linear feet</td><td>Varies with gap size</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Estimating labor — the part most beginners get wrong</h3>
+  <ul>
+    <li>Prep takes as long as — often longer than — the actual painting</li>
+    <li>A 12' × 15' room (one coat) takes an experienced painter roughly 2–3 hours from setup to cleanup</li>
+    <li>Always add time for: protecting floors and furniture, moving items, cutting in, two coats, and cleanup</li>
+    <li>When starting out, track your time on every job — your estimates will get more accurate with each project</li>
+  </ul>
+
+  <h3>The path from employee to contractor</h3>
+  <p>When you're ready to work for yourself, here's what it takes:</p>
+  <ul>
+    <li><strong>Contractor's license:</strong> Most states require one for jobs over a certain dollar amount — check your state's licensing board</li>
+    <li><strong>Business license:</strong> Register your business (LLC recommended for liability protection) — typically $50–$200</li>
+    <li><strong>Insurance:</strong> General liability ($1M minimum) is required by most clients. About $100–$200/month for a solo operator.</li>
+    <li><strong>Estimating software:</strong> Quick Bid, Jobber, or simply a well-designed spreadsheet</li>
+    <li><strong>Marketing:</strong> Google Business Profile (free), Nextdoor (free), and before/after photos on Instagram are how most small painting businesses get their first clients</li>
+  </ul>
+
+  <div class="callout tip">
+    <span class="callout-icon">💡</span> The fastest path to running your own painting business: work for a good contractor for 2–3 years, learn every aspect of the trade and how they run their business, save money, and take your first clients on weekends. Never leave your job until your side business replaces your income.
+  </div>
+
+  <h3>Watch — how to estimate an interior paint job</h3>
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">Fast & Easy Interior Paint Job Estimates — Accurate Guide for Beginners & Pros (2024)</div>
+      <div class="video-desc">A working painting professional walks through exactly how to estimate an interior job from scratch — measuring square footage, calculating materials, pricing labor, and arriving at a number that actually makes you money. Built specifically for beginners. One of the most practical estimating videos available.</div>
+      <div class="video-tags"><span class="tag">Estimating</span><span class="tag">Square Footage</span><span class="tag">Labor Pricing</span><span class="tag">Beginners</span><span class="tag">2024</span></div>
+      <div style="margin-top:12px;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+        <iframe src="https://www.youtube.com/embed/kv2wZVmrosE" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Quiz</div>
+    <div class="quiz-subtitle">Chapter 10 — Estimating · Could you calculate materials and estimate a basic job?</div>
+    <button class="complete-btn" id="btn-ch10" onclick="markComplete('ch10', this)">✓ Mark Chapter 10 Complete</button>
+    <div class="chapter-nav">
+      <span style="font-size:13px;color:var(--text-dim)">Chapter 10 of 12</span>
+      <a href="#ch11" class="next-chapter-link">Next: Chapter 11 — Getting Hired →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 11 -->
+<section class="chapter" id="ch11">
+  <div class="chapter-label">Chapter 11 · Getting Hired</div>
+  <h2>Everything you've learned — <em>now put it to work.</em></h2>
+  <p>If you've worked through this course, you already know more than most people who apply for helper positions. Now let's make sure you get the job.</p>
+
+  <h3>What employers are actually looking for</h3>
+  <p>Here's the honest truth about hiring at the helper level: most painting contractors are not looking for someone who knows everything. They're looking for someone who is <strong>safe, reliable, and teachable.</strong> Technical knowledge is a bonus at this stage. Character is the requirement.</p>
+
+  <div class="career-grid">
+    <div class="career-card"><div class="career-card-icon">✅</div><div class="career-card-title">OSHA 10 Card</div><div class="career-card-pay">Must Have</div><div class="career-card-desc">The first thing most contractors check. Get it before you apply to anything.</div></div>
+    <div class="career-card"><div class="career-card-icon">🚗</div><div class="career-card-title">Reliable Transportation</div><div class="career-card-pay">Must Have</div><div class="career-card-desc">Job sites change. A valid license and reliable vehicle are frequently required.</div></div>
+    <div class="career-card"><div class="career-card-icon">🎨</div><div class="career-card-title">Trade Knowledge</div><div class="career-card-pay">Strong Advantage</div><div class="career-card-desc">Being able to explain prep steps, paint types, and tool names immediately sets you apart.</div></div>
+    <div class="career-card"><div class="career-card-icon">📜</div><div class="career-card-title">PCA Certificate</div><div class="career-card-pay">Strong Advantage</div><div class="career-card-desc">Employers notice the person who started learning before they got hired.</div></div>
+    <div class="career-card"><div class="career-card-icon">💪</div><div class="career-card-title">Physical Readiness</div><div class="career-card-pay">Big Plus</div><div class="career-card-desc">Standing, climbing, lifting, and repetitive motion all day. Mention your physical fitness. Employers appreciate it.</div></div>
+    <div class="career-card"><div class="career-card-icon">🔥</div><div class="career-card-title">Genuine Enthusiasm</div><div class="career-card-pay">Most Important</div><div class="career-card-desc">Contractors hire people they want to spend 8 hours a day with. Someone excited about the trade is worth more than any certificate.</div></div>
+  </div>
+
+  <h3>Where to find painting jobs</h3>
+  <ul>
+    <li><strong><a href="https://www.indeed.com/q-painter-helper-jobs.html" target="_blank" style="color:var(--accent)">Indeed.com ↗</a></strong> — search "painter helper" or "painting laborer no experience"</li>
+    <li><strong><a href="https://www.ziprecruiter.com/Jobs/Painter-Helper" target="_blank" style="color:var(--accent)">ZipRecruiter.com ↗</a></strong> — "painter helper no experience"</li>
+    <li><strong>Craigslist — Skilled Trades</strong> — many small painting contractors post here exclusively, check daily</li>
+    <li><strong>Google Maps</strong> — search "painting contractor [your city]" and call every one directly</li>
+    <li><strong>Nextdoor and Facebook Marketplace</strong> — small residential painters often post jobs here</li>
+    <li><strong>Paint supply stores</strong> — Sherwin-Williams, Benjamin Moore, PPG stores. Contractors come in every morning. Introduce yourself.</li>
+  </ul>
+
+  <h3>Words that work in painting interviews</h3>
+  <div class="callout tip">
+    <span class="callout-icon">💬</span> <strong>Be honest:</strong> "I have no field experience yet, but I've completed this course, earned my OSHA 10 card, and I'm serious about building a career in this trade. I'm a hard worker, I show up early, and I'll do whatever prep work the job needs without complaining."
+  </div>
+  <ul>
+    <li>Be ready to explain the correct order of a paint job (prep → prime → paint → trim last)</li>
+    <li>Name a few paint finishes and when you'd use each one</li>
+    <li>Explain why surface prep matters more than the paint itself</li>
+    <li>Emphasize attitude: "I show up on time, I'm physically fit, I follow direction, and I ask questions when I'm unsure."</li>
+    <li>Ask smart questions: "What types of projects does your company mostly work on?" — shows you understand the trade has different sectors</li>
+  </ul>
+
+  <div class="callout tip">
+    <span class="callout-icon">🎯</span> <strong>Target small to mid-size residential painting contractors.</strong> A company with 3–15 painters will give you real responsibility much faster than a large commercial firm. They train as they go and are far more likely to hire someone with no field experience.
+  </div>
+
+  <h3>Once you're hired — remember this</h3>
+  <p>You now have the knowledge and know-how to get in the door. What happens next is entirely up to you. <strong>Practice, practice, practice.</strong> Every wall you prep, every line you cut, every surface you roll — that's where real skill is built. No course gives you that. Only the job does.</p>
+  <p>The painters who advance fastest are not the most naturally talented. They're the ones who show up every single day, pay attention to everything around them, and treat every job as a classroom. That's you now. Go get started.</p>
+
+  <h3>The next level — building your own business</h3>
+  <p>Once you're proficient — once the prep is second nature, the cut lines are clean, and you're trusted on any job — the painting trade offers something most careers don't: <strong>a clear, affordable path to full business ownership.</strong></p>
+  <p>Tim Oliphant, whose video is in Chapter 1, started with a few hundred dollars and built a six-figure solo business. He's not unusual. The painting industry has one of the lowest barriers to entrepreneurship of any skilled trade — no expensive equipment, no massive overhead, no years of licensing hurdles before you can work for yourself.</p>
+  <p>When you're ready to think about that path, here's what to study next:</p>
+
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-icon">📋</div>
+      <div class="tool-name">Estimating & Bidding</div>
+      <div class="tool-desc">Chapter 10 gave you the foundation. Go deeper — study production rates, markup strategy, and how to write a professional bid packet that wins jobs.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🏢</div>
+      <div class="tool-name">Business Setup</div>
+      <div class="tool-desc">Form an LLC (~$50–200), get general liability insurance (~$100–200/month), open a business bank account. These three steps separate a professional from a handyman.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">📱</div>
+      <div class="tool-name">Marketing</div>
+      <div class="tool-desc">Google Business Profile (free), before/after photos on Instagram, yard signs at every job, and Google Ads when you're ready to scale. Tim's video covers all of this in detail.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">⭐</div>
+      <div class="tool-name">Reviews & Reputation</div>
+      <div class="tool-desc">Five Google reviews from satisfied clients is worth more than any advertising. Ask every happy customer. Your reputation is your most valuable business asset.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">📚</div>
+      <div class="tool-name">PCA Business Training</div>
+      <div class="tool-desc">The Painting Contractors Association offers a dedicated Business Training program — Foundations and Accelerator levels — taught by real painting business owners.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🎙</div>
+      <div class="tool-name">The Profitable Painter Podcast</div>
+      <div class="tool-desc">Start listening on your commute once you're employed. Pricing, hiring, marketing, and running a professional operation — all from people already doing it.</div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <span class="callout-icon">💡</span> <strong>The smart path:</strong> Get hired. Work for 2–3 years. Learn the trade AND how a painting business runs from the inside. Save money. Take your first clients on weekends. When your side income matches your salary — make the jump. That's how most successful painting contractors got there.
+  </div>
+
+  <h3>Your continuing education resources</h3>
+  <div class="video-card">
+    <div class="video-icon">▶</div>
+    <div class="video-meta">
+      <div class="video-title">PCA Overdrive — Free Ongoing Training</div>
+      <div class="video-desc">Your primary ongoing learning resource. Free video library covering Interior and Exterior levels 1–3, plus specialty topics added regularly.</div>
+      <div class="video-tags"><span class="tag">Free</span><span class="tag">All Levels</span><span class="tag">Interior</span><span class="tag">Exterior</span></div>
+      <a href="https://www.pcaoverdrive.org/painter-training" target="_blank" class="video-link">PCA Overdrive ↗</a>
+    </div>
+  </div>
+  <div class="video-card">
+    <div class="video-icon">🎙</div>
+    <div class="video-meta">
+      <div class="video-title">The Profitable Painter Podcast</div>
+      <div class="video-desc">Business, estimating, and trade skills for painters who want to grow. Covers pricing, hiring crews, marketing, and running a professional painting operation.</div>
+      <div class="video-tags"><span class="tag">Business</span><span class="tag">Estimating</span><span class="tag">Growth</span><span class="tag">Podcast</span></div>
+      <a href="https://podcasts.apple.com/us/podcast/the-profitable-painter-podcast/id1492245483" target="_blank" class="video-link">Apple Podcasts ↗</a>
+    </div>
+  </div>
+
+  <p style="margin-top:40px;font-size:15px;color:var(--text-muted)">Questions? Email <a href="mailto:info@darcocenter.org" style="color:var(--accent)">info@darcocenter.org</a></p>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Final Chapter Quiz</div>
+    <div class="quiz-subtitle">Chapter 11 — Getting Hired · Passed the quiz? This chapter — and the entire course — is now complete.</div>
+    <button class="complete-btn" id="btn-ch11" onclick="markComplete('ch11', this)">✓ Mark Chapter 11 Complete</button>
+    <div class="chapter-nav">
+      <span style="font-size:13px;color:var(--text-dim)">Chapter 11 of 12 — Course Complete 🎉</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">D · DARCO INC</span>
+  <p>Construction Painting Career Program · A <strong>Darco Inc</strong> career development resource · <strong>USA</strong> · Updated <strong>2025–26</strong></p>
+  <p style="margin-top:8px">Questions? Email <a href="mailto:info@darcocenter.org">info@darcocenter.org</a></p>
+  <p style="margin-top:12px;font-size:12px;color:var(--text-dim)">Educational content only. Always verify local licensing requirements before starting a painting business.</p>
+</footer>
+
+<!-- COUNTDOWN OVERLAY -->
+<div class="countdown-overlay" id="countdownOverlay">
+  <div class="countdown-header">
+    ⏱ START YOUR COUNTDOWN
+    <button class="countdown-minimize" onclick="toggleCountdown()">−</button>
+  </div>
+  <div class="countdown-setup" id="countdownSetup">
+    <div class="countdown-label">Your first name</div>
+    <input class="countdown-input" id="cdName" placeholder="Enter your name" />
+    <div class="countdown-label">When do you want to be job-ready?</div>
+    <select class="countdown-select" id="cdWeeks">
+      <option value="12">3 months · recommended</option>
+      <option value="16">4 months</option>
+      <option value="20">5 months</option>
+    </select>
+    <button class="countdown-start" onclick="startCountdown()">Start my countdown →</button>
+  </div>
+  <div class="countdown-active" id="countdownActive">
+    <div class="countdown-display on-track" id="cdDisplay">--d --h</div>
+    <div class="countdown-status" id="cdStatus">until your target date</div>
+    <div class="countdown-progress-mini" id="cdProgressMini">0 / 12 chapters done</div>
+  </div>
+</div>
+
+<!-- COMPLETE OVERLAY -->
+<div class="complete-overlay" id="completeOverlay">
+  <div class="complete-box">
+    <div class="complete-emoji">🎉</div>
+    <div class="complete-title">Course Complete!</div>
+    <p class="complete-sub">You have the knowledge. You have the know-how. Now the only thing left is to get on a job site and let practice do the rest. That's how every great painter got there.</p>
+    <button class="complete-close" onclick="document.getElementById('completeOverlay').classList.remove('show')">Go to Getting Hired →</button>
+  </div>
+</div>
+
+<script>
+  const TOTAL = 12;
+  const CHAPTERS = ['ch0','ch1','ch2','ch3','ch4','ch5','ch6','ch7','ch8','ch9','ch10','ch11'];
+  let completed = JSON.parse(localStorage.getItem('darco-paint-progress') || '[]');
+
+  function save() {
+    localStorage.setItem('darco-paint-progress', JSON.stringify(completed));
+  }
+
+  function updateUI() {
+    const count = completed.length;
+    const pct = (count / TOTAL) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressCount').textContent = count + ' / ' + TOTAL + ' chapters';
+    CHAPTERS.forEach((id, i) => {
+      const btn = document.getElementById('btn-' + id);
+      const strip = document.getElementById('chapterStrip');
+      const stripBtns = strip.querySelectorAll('.ch-btn');
+      if (completed.includes(id)) {
+        if (btn) { btn.textContent = '✓ Chapter Complete'; btn.classList.add('completed'); }
+        if (stripBtns[i]) { stripBtns[i].classList.add('done'); stripBtns[i].querySelector('.ch-check') || (stripBtns[i].innerHTML = '✓ ' + stripBtns[i].textContent); }
+      }
+    });
+    const cdMini = document.getElementById('cdProgressMini');
+    if (cdMini) cdMini.textContent = count + ' / ' + TOTAL + ' chapters done';
+    if (count === TOTAL) {
+      setTimeout(() => document.getElementById('completeOverlay').classList.add('show'), 600);
+    }
+  }
+
+  function markComplete(id, btn) {
+    if (!completed.includes(id)) {
+      completed.push(id);
+      save();
+      btn.textContent = '✓ Chapter Complete';
+      btn.classList.add('completed');
+      updateUI();
+    }
+  }
+
+  function resetProgress() {
+    if (confirm('Reset all progress?')) {
+      completed = [];
+      save();
+      CHAPTERS.forEach(id => {
+        const btn = document.getElementById('btn-' + id);
+        if (btn) { btn.textContent = '✓ Mark ' + id.replace('ch', 'Chapter ') + ' Complete'; btn.classList.remove('completed'); }
+      });
+      document.getElementById('chapterStrip').querySelectorAll('.ch-btn').forEach(b => b.classList.remove('done'));
+      updateUI();
+    }
+  }
+
+  function scrollTo(hash) {
+    const el = document.querySelector(hash);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Countdown
+  let cdTarget = null;
+  function startCountdown() {
+    const weeks = parseInt(document.getElementById('cdWeeks').value);
+    cdTarget = Date.now() + weeks * 7 * 24 * 3600 * 1000;
+    localStorage.setItem('darco-paint-cd', cdTarget);
+    document.getElementById('countdownOverlay').classList.add('running');
+    tickCountdown();
+  }
+
+  function tickCountdown() {
+    if (!cdTarget) return;
+    const diff = cdTarget - Date.now();
+    if (diff <= 0) {
+      document.getElementById('cdDisplay').textContent = 'Time\'s up!';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const display = document.getElementById('cdDisplay');
+    display.textContent = d + 'd ' + h + 'h';
+    const totalTime = parseInt(localStorage.getItem('darco-paint-cd-total') || cdTarget) - (Date.now() - diff);
+    const pct = completed.length / TOTAL;
+    const timePct = 1 - (diff / (parseInt(localStorage.getItem('darco-paint-cd-start') || '1') || 1));
+    display.className = 'countdown-display ' + (pct >= 0 ? 'on-track' : 'behind');
+    setTimeout(tickCountdown, 60000);
+  }
+
+  function toggleCountdown() {
+    const o = document.getElementById('countdownOverlay');
+    o.classList.toggle('hidden');
+  }
+
+  // Init
+  const savedCd = localStorage.getItem('darco-paint-cd');
+  if (savedCd) {
+    cdTarget = parseInt(savedCd);
+    document.getElementById('countdownOverlay').classList.add('running');
+    tickCountdown();
+  }
+  updateUI();
+</script>
+</body>
+</html>
