@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 9 — Specialty Finishes | Darco Construction Painting Course</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">🏗️ Darco Painting Trade Course</a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-home">All Chapters</a>
+    <span class="nav-progress" id="navProgress">0 / 12 done</span>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">/</span>
+  <span class="current">Chapter 9 · Specialty Finishes</span>
+</div>
+
+<div class="chapter-page">
+  <div class="chapter-label">Chapter 9 · Specialty Finishes</div>
+
+
+  <h2>Where you charge <em>more.</em></h2>
+  <p>Standard painting pays well. Specialty finishes pay better. These techniques set you apart from the $20/hour helper who only knows how to roll walls — and open the door to higher-end clients and bigger margins.</p>
+  <p>You don't need these on day one. Learn them after you're employed and comfortable with the basics.</p>
+
+  <h3>Spray painting — the production tool</h3>
+  <ul>
+    <li>Hold the sprayer 10–12" from the surface at all times</li>
+    <li>Move in smooth, overlapping strokes — overlap each pass by 50%</li>
+    <li>Keep the gun perpendicular to the surface — tilting creates uneven coverage</li>
+    <li>Trigger before reaching the surface, release after passing it — prevents heavy spots</li>
+    <li>Multiple thin coats always beat one heavy coat</li>
+    <li>Mask everything nearby — overspray travels further than you think</li>
+  </ul>
+
+  <h3>Cabinet and furniture painting</h3>
+  <ul>
+    <li>Remove all doors and hardware — never paint cabinets in place</li>
+    <li>Clean thoroughly with degreaser — kitchen grease prevents adhesion</li>
+    <li>Sand all surfaces to 150 grit, then 220 grit</li>
+    <li>Apply a bonding primer — Stix or BIN are professional standards</li>
+    <li>Spray with HVLP for the smoothest finish</li>
+    <li>2–3 thin coats of waterborne alkyd enamel</li>
+    <li>Sand lightly between coats with 320 grit</li>
+  </ul>
+
+  <h3>Decorative and faux finishes</h3>
+  <ul>
+    <li><strong>Color washing:</strong> Diluted glaze applied over base coat creates soft, layered depth</li>
+    <li><strong>Sponging:</strong> Natural sea sponge applied to or removed from wet glaze creates organic texture</li>
+    <li><strong>Ragging:</strong> Crumpled rag creates patterns in wet glaze</li>
+    <li><strong>Stenciling:</strong> Secure stencil firmly, use a nearly dry brush in dabbing motions — never stroke</li>
+  </ul>
+
+  <h3>Texture coatings</h3>
+  <ul>
+    <li><strong>Knockdown:</strong> Joint compound applied by roller or sprayer, then partially smoothed</li>
+    <li><strong>Orange peel:</strong> Thin compound sprayed to create bumpy texture</li>
+    <li><strong>Skip trowel:</strong> Compound applied by hand with a trowel in irregular passes</li>
+    <li><strong>Skim coating:</strong> Smoothing over textured walls — a high-value skill almost no beginners have</li>
+  </ul>
+
+  <h3>Watch — sprayer tips before you start</h3>
+  <div class="video-card">
+    <div class="video-title">Tips Before Using Your Paint Sprayer — CJ Spray (2.5M views)</div>
+    <div class="video-desc">Everything a beginner needs to know before picking up a sprayer — setup, pressure settings, distance, overlap, triggering technique, and avoiding the most common mistakes. Watch this before you ever touch a spray gun.</div>
+    <div class="video-tags"><span class="tag">Sprayer</span><span class="tag">HVLP</span><span class="tag">Airless</span><span class="tag">Technique</span><span class="tag">2.5M Views</span></div>
+    <div class="video-embed"><iframe src="https://www.youtube.com/embed/u9IF-FFjSkM" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Complete?</div>
+    <div class="quiz-subtitle">Know the techniques that increase your earning power?</div>
+    <button class="complete-btn" id="btn-ch9" onclick="markComplete('ch9', this)">✓ Mark Chapter 9 Complete</button>
+  </div>
+
+
+<div class="chapter-nav-footer">
+    <a href="chapter-8.html">← Previous</a>
+    <a href="index.html">📚 All Chapters</a>
+    <a href="chapter-10.html" class="next">Next Chapter →</a>
+  </div>
+</div>
+
+<div class="complete-overlay" id="completeOverlay">
+  <div class="complete-box">
+    <div class="complete-emoji">✅</div>
+    <div class="complete-title">Chapter 9 Complete!</div>
+    <p class="complete-sub">Great work. Keep going — every chapter brings you closer to getting hired.</p>
+    <button class="complete-close" onclick="document.getElementById('completeOverlay').classList.remove('show')">Stay here</button>
+    <a href="chapter-10.html" class="complete-next">Next Chapter →</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">D · DARCO INC</span>
+  <p>Construction Painting Career Program · <a href="index.html">Back to Course Home</a></p>
+</footer>
+
+<script>
+const TOTAL = 12;
+let completed = JSON.parse(localStorage.getItem('darco-paint-progress') || '[]');
+document.getElementById('navProgress').textContent = completed.length + ' / ' + TOTAL + ' done';
+
+function markComplete(id, btn) {
+  if (!completed.includes(id)) {
+    completed.push(id);
+    localStorage.setItem('darco-paint-progress', JSON.stringify(completed));
+    btn.textContent = '✓ Chapter Complete';
+    btn.classList.add('completed');
+    document.getElementById('navProgress').textContent = completed.length + ' / ' + TOTAL + ' done';
+    setTimeout(() => document.getElementById('completeOverlay').classList.add('show'), 400);
+  }
+}
+
+// Restore button state
+if (completed.includes('ch9')) {
+  const btn = document.getElementById('btn-ch9');
+  if (btn) { btn.textContent = '✓ Chapter Complete'; btn.classList.add('completed'); }
+}
+</script>
+</body>
+</html>

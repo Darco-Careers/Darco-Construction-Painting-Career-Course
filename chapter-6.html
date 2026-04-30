@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 6 — Paint & Materials | Darco Construction Painting Course</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">🏗️ Darco Painting Trade Course</a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-home">All Chapters</a>
+    <span class="nav-progress" id="navProgress">0 / 12 done</span>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">/</span>
+  <span class="current">Chapter 6 · Paint & Materials</span>
+</div>
+
+<div class="chapter-page">
+  <div class="chapter-label">Chapter 6 · Paint & Materials</div>
+
+
+  <h2>Choosing the right <em>product for every job.</em></h2>
+  <p>Walk into any paint store and you'll face hundreds of products. Knowing how to choose quickly and correctly separates professional painters from amateurs — and employers will test you on this immediately.</p>
+
+  <h3>Latex vs. Oil-Based paint</h3>
+  <table class="data-table">
+    <thead><tr><th>Property</th><th>Latex (Water-Based)</th><th>Oil-Based</th></tr></thead>
+    <tbody>
+      <tr><td>Cleanup</td><td>Water and soap</td><td>Mineral spirits / solvents</td></tr>
+      <tr><td>Dry time</td><td>1–2 hours between coats</td><td>8–24 hours between coats</td></tr>
+      <tr><td>Durability</td><td>Good — improves with acrylic</td><td>Excellent — very hard finish</td></tr>
+      <tr><td>Fumes</td><td>Low VOC</td><td>High VOC — strong ventilation required</td></tr>
+      <tr><td>Best use</td><td>Walls, ceilings, most interior work</td><td>Trim, cabinets, doors, high-wear surfaces</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Paint finishes — when to use each</h3>
+  <div class="tool-grid">
+    <div class="tool-card"><div class="tool-icon">⬜</div><div class="tool-name">Flat / Matte</div><div class="tool-desc">Hides imperfections best. Use on ceilings and low-traffic walls. Not washable.</div></div>
+    <div class="tool-card"><div class="tool-icon">🥚</div><div class="tool-name">Eggshell</div><div class="tool-desc">Slight sheen. Standard finish for most interior walls. Easy to wipe clean.</div></div>
+    <div class="tool-card"><div class="tool-icon">✨</div><div class="tool-name">Satin</div><div class="tool-desc">Smooth, moderate sheen. More washable. Good for hallways, kitchens, kids' rooms.</div></div>
+    <div class="tool-card"><div class="tool-icon">💡</div><div class="tool-name">Semi-Gloss</div><div class="tool-desc">Shiny, highly washable. Standard for trim, doors, and bathrooms.</div></div>
+    <div class="tool-card"><div class="tool-icon">🪞</div><div class="tool-name">Gloss</div><div class="tool-desc">High shine, hardest finish. Best for furniture, cabinets, and exterior trim.</div></div>
+  </div>
+
+  <div class="callout info">
+    <span class="callout-icon">ℹ️</span> <strong>Quick rule:</strong> Higher sheen = more durable and washable, but shows surface imperfections more. Lower sheen = hides imperfections better, but marks more easily.
+  </div>
+
+  <h3>Specialty products you'll encounter</h3>
+  <ul>
+    <li><strong>Stain-blocking primer (Zinsser BIN, Kilz):</strong> Blocks water stains, smoke, and nicotine permanently</li>
+    <li><strong>Masonry paint:</strong> Breathable and flexible — required for concrete, brick, and stucco</li>
+    <li><strong>Epoxy floor coating:</strong> For garage floors and industrial surfaces — two-part system</li>
+    <li><strong>Elastomeric paint:</strong> Bridges hairline cracks in stucco and masonry</li>
+    <li><strong>Waterborne alkyd:</strong> Oil-like finish with latex cleanup — increasingly standard for trim</li>
+  </ul>
+
+  <h3>Watch — paint sheens explained</h3>
+  <div class="video-card">
+    <div class="video-title">Paint Sheens Explained — Which Paint Finish to Use? (2024)</div>
+    <div class="video-desc">Every finish from flat to high gloss clearly explained — what each looks like, how durable it is, and where it belongs. By the end you'll know immediately what sheen goes on every surface in any room.</div>
+    <div class="video-tags"><span class="tag">Paint Sheens</span><span class="tag">Flat</span><span class="tag">Eggshell</span><span class="tag">Satin</span><span class="tag">Semi-Gloss</span><span class="tag">2024</span></div>
+    <div class="video-embed"><iframe src="https://www.youtube.com/embed/Avp_0KJhUbQ" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Complete?</div>
+    <div class="quiz-subtitle">Could you choose the right product for any surface?</div>
+    <button class="complete-btn" id="btn-ch6" onclick="markComplete('ch6', this)">✓ Mark Chapter 6 Complete</button>
+  </div>
+
+
+<div class="chapter-nav-footer">
+    <a href="chapter-5.html">← Previous</a>
+    <a href="index.html">📚 All Chapters</a>
+    <a href="chapter-7.html" class="next">Next Chapter →</a>
+  </div>
+</div>
+
+<div class="complete-overlay" id="completeOverlay">
+  <div class="complete-box">
+    <div class="complete-emoji">✅</div>
+    <div class="complete-title">Chapter 6 Complete!</div>
+    <p class="complete-sub">Great work. Keep going — every chapter brings you closer to getting hired.</p>
+    <button class="complete-close" onclick="document.getElementById('completeOverlay').classList.remove('show')">Stay here</button>
+    <a href="chapter-7.html" class="complete-next">Next Chapter →</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">D · DARCO INC</span>
+  <p>Construction Painting Career Program · <a href="index.html">Back to Course Home</a></p>
+</footer>
+
+<script>
+const TOTAL = 12;
+let completed = JSON.parse(localStorage.getItem('darco-paint-progress') || '[]');
+document.getElementById('navProgress').textContent = completed.length + ' / ' + TOTAL + ' done';
+
+function markComplete(id, btn) {
+  if (!completed.includes(id)) {
+    completed.push(id);
+    localStorage.setItem('darco-paint-progress', JSON.stringify(completed));
+    btn.textContent = '✓ Chapter Complete';
+    btn.classList.add('completed');
+    document.getElementById('navProgress').textContent = completed.length + ' / ' + TOTAL + ' done';
+    setTimeout(() => document.getElementById('completeOverlay').classList.add('show'), 400);
+  }
+}
+
+// Restore button state
+if (completed.includes('ch6')) {
+  const btn = document.getElementById('btn-ch6');
+  if (btn) { btn.textContent = '✓ Chapter Complete'; btn.classList.add('completed'); }
+}
+</script>
+</body>
+</html>

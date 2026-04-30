@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 8 — Exterior Painting | Darco Construction Painting Course</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">🏗️ Darco Painting Trade Course</a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-home">All Chapters</a>
+    <span class="nav-progress" id="navProgress">0 / 12 done</span>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">/</span>
+  <span class="current">Chapter 8 · Exterior Painting</span>
+</div>
+
+<div class="chapter-page">
+  <div class="chapter-label">Chapter 8 · Exterior Painting</div>
+
+
+  <h2>The job that <em>weather controls.</em></h2>
+  <p>Exterior painting follows the same principles as interior — prep, prime, paint — but weather, surface variety, and scale make it its own discipline.</p>
+
+  <h3>When to paint — and when to stop</h3>
+  <ul>
+    <li>Ideal temperature: <strong>50°F–90°F</strong>. Below 50°F, paint won't cure. Above 90°F, dries too fast and causes lap marks.</li>
+    <li>Never paint in direct sunlight — surface temperature is often 20–30° hotter than air</li>
+    <li>Don't paint if rain is expected within 24 hours</li>
+    <li>Humidity above 85% dramatically slows drying and can cause paint failure</li>
+    <li>Paint on the shaded side of the building, following the shade as the day progresses</li>
+  </ul>
+
+  <div class="callout warning">
+    <span class="callout-icon">⚠️</span> Painting over wet or damp wood is the most common cause of exterior paint failure. After rain, wait at least 24–48 hours. Test with a moisture meter — wood should read below 15% moisture content.
+  </div>
+
+  <h3>Exterior preparation — the full sequence</h3>
+  <ol>
+    <li><strong>Inspect:</strong> Check for rot, damaged siding, failed caulk, and deteriorated paint</li>
+    <li><strong>Clean:</strong> Pressure wash to remove dirt, mildew, and loose paint</li>
+    <li><strong>Scrape:</strong> Remove all loose and flaking paint — if it's not bonded, new paint over it will fail</li>
+    <li><strong>Sand:</strong> Feather edges where old paint meets bare wood</li>
+    <li><strong>Caulk:</strong> Seal all gaps around windows, doors, trim joints, and siding seams</li>
+    <li><strong>Prime:</strong> Prime all bare wood, repairs, and areas where old paint was removed</li>
+  </ol>
+
+  <h3>Exterior painting technique</h3>
+  <ul>
+    <li>Work from top to bottom — fascia and soffits first, then siding, then trim</li>
+    <li>On siding, paint the underside of the lap first, then the face</li>
+    <li>Use a brush for all trim and detail work; roller or sprayer for large flat siding areas</li>
+    <li>Maintain a wet edge — work in manageable vertical sections</li>
+    <li>Back-brush sprayed surfaces — run a brush over freshly sprayed areas to work paint into the wood grain</li>
+  </ul>
+
+  <h3>Painting masonry (stucco, brick, concrete block)</h3>
+  <ul>
+    <li>Use masonry-specific paint — standard latex will not bond properly</li>
+    <li>Fill cracks with masonry patching compound before painting</li>
+    <li>Remove efflorescence (white powder deposits) with masonry cleaner — paint will not bond over it</li>
+    <li>Apply two coats — masonry is highly porous and absorbs the first coat</li>
+    <li>Use a thick-nap roller (3/4"–1") to work paint into the texture</li>
+  </ul>
+
+  <h3>Watch — 1 painter, 6 days, 3,500 square feet</h3>
+  <div class="video-card">
+    <div class="video-title">How to Paint an Exterior — 1 Painter, 6 Days, 3,500 Sq Ft (Idaho Painter)</div>
+    <div class="video-desc">The Idaho Painter takes on a full house exterior completely solo and documents every step — pressure washing, scraping, caulking, priming, masking, spraying, back-brushing, and trim. The most complete real-world exterior painting video available.</div>
+    <div class="video-tags"><span class="tag">Exterior</span><span class="tag">Full Process</span><span class="tag">Solo Painter</span><span class="tag">Real Job</span></div>
+    <div class="video-embed"><iframe src="https://www.youtube.com/embed/fc9LVhemD9k" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Complete?</div>
+    <div class="quiz-subtitle">Ready to handle an exterior job from start to finish?</div>
+    <button class="complete-btn" id="btn-ch8" onclick="markComplete('ch8', this)">✓ Mark Chapter 8 Complete</button>
+  </div>
+
+
+<div class="chapter-nav-footer">
+    <a href="chapter-7.html">← Previous</a>
+    <a href="index.html">📚 All Chapters</a>
+    <a href="chapter-9.html" class="next">Next Chapter →</a>
+  </div>
+</div>
+
+<div class="complete-overlay" id="completeOverlay">
+  <div class="complete-box">
+    <div class="complete-emoji">✅</div>
+    <div class="complete-title">Chapter 8 Complete!</div>
+    <p class="complete-sub">Great work. Keep going — every chapter brings you closer to getting hired.</p>
+    <button class="complete-close" onclick="document.getElementById('completeOverlay').classList.remove('show')">Stay here</button>
+    <a href="chapter-9.html" class="complete-next">Next Chapter →</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">D · DARCO INC</span>
+  <p>Construction Painting Career Program · <a href="index.html">Back to Course Home</a></p>
+</footer>
+
+<script>
+const TOTAL = 12;
+let completed = JSON.parse(localStorage.getItem('darco-paint-progress') || '[]');
+document.getElementById('navProgress').textContent = completed.length + ' / ' + TOTAL + ' done';
+
+function markComplete(id, btn) {
+  if (!completed.includes(id)) {
+    completed.push(id);
+    localStorage.setItem('darco-paint-progress', JSON.stringify(completed));
+    btn.textContent = '✓ Chapter Complete';
+    btn.classList.add('completed');
+    document.getElementById('navProgress').textContent = completed.length + ' / ' + TOTAL + ' done';
+    setTimeout(() => document.getElementById('completeOverlay').classList.add('show'), 400);
+  }
+}
+
+// Restore button state
+if (completed.includes('ch8')) {
+  const btn = document.getElementById('btn-ch8');
+  if (btn) { btn.textContent = '✓ Chapter Complete'; btn.classList.add('completed'); }
+}
+</script>
+</body>
+</html>

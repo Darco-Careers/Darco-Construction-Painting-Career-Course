@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 10 — Estimating & Business | Darco Construction Painting Course</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">🏗️ Darco Painting Trade Course</a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-home">All Chapters</a>
+    <span class="nav-progress" id="navProgress">0 / 12 done</span>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">/</span>
+  <span class="current">Chapter 10 · Estimating & Business</span>
+</div>
+
+<div class="chapter-page">
+  <div class="chapter-label">Chapter 10 · Estimating & Business</div>
+
+
+  <h2>The math that makes <em>you profitable.</em></h2>
+  <p>Most painters who work for themselves fail not because they can't paint — but because they can't estimate. They underbid jobs, run out of money, and burn out. Learning to estimate properly is what separates a painter with a job from a painter with a business.</p>
+
+  <h3>Measuring square footage</h3>
+  <ul>
+    <li>Wall area: Width × height of each wall, subtract doors (20 sq ft each) and windows (15 sq ft each)</li>
+    <li>Ceiling area: Length × width of the room</li>
+    <li>Trim: Measure linear feet of baseboard, door casings, crown molding, and window trim</li>
+    <li>Rule of thumb: A gallon of latex paint covers 350–400 sq ft per coat on a smooth surface</li>
+  </ul>
+
+  <h3>Calculating materials</h3>
+  <table class="data-table">
+    <thead><tr><th>Item</th><th>Coverage</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Interior latex paint</td><td>350–400 sq ft/gallon</td><td>Reduce by 20% on textured surfaces</td></tr>
+      <tr><td>Exterior paint</td><td>250–350 sq ft/gallon</td><td>Rough siding may need more</td></tr>
+      <tr><td>Primer</td><td>300–400 sq ft/gallon</td><td>New drywall absorbs more — budget extra</td></tr>
+      <tr><td>Caulk (tube)</td><td>~35 linear feet</td><td>Varies with gap size</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Estimating labor</h3>
+  <ul>
+    <li>Prep takes as long as — often longer than — the actual painting</li>
+    <li>A 12' × 15' room (one coat) takes an experienced painter roughly 2–3 hours setup to cleanup</li>
+    <li>Always add time for: protecting floors, moving items, cutting in, two coats, and cleanup</li>
+    <li>Track your time on every job — your estimates get more accurate with each project</li>
+  </ul>
+
+  <h3>The path from employee to contractor</h3>
+  <ul>
+    <li><strong>Contractor's license:</strong> Most states require one for jobs over a certain dollar amount — check your state's licensing board</li>
+    <li><strong>Business license:</strong> Register as an LLC (typically $50–$200) for liability protection</li>
+    <li><strong>Insurance:</strong> General liability ($1M minimum) — about $100–$200/month for a solo operator</li>
+    <li><strong>Estimating software:</strong> Quick Bid, Jobber, or a well-designed spreadsheet</li>
+    <li><strong>Marketing:</strong> Google Business Profile (free), Nextdoor (free), and before/after photos on Instagram</li>
+  </ul>
+
+  <div class="callout tip">
+    <span class="callout-icon">💡</span> <strong>The smart path:</strong> Get hired. Work for 2–3 years. Learn the trade AND how a painting business runs from the inside. Save money. Take your first clients on weekends. When your side income matches your salary — make the jump. That's how most successful painting contractors got there.
+  </div>
+
+  <h3>Watch — how to estimate an interior paint job</h3>
+  <div class="video-card">
+    <div class="video-title">Fast & Easy Interior Paint Job Estimates — Accurate Guide for Beginners & Pros (2024)</div>
+    <div class="video-desc">A working professional walks through exactly how to estimate an interior job from scratch — measuring square footage, calculating materials, pricing labor, and arriving at a number that actually makes you money. Built specifically for beginners.</div>
+    <div class="video-tags"><span class="tag">Estimating</span><span class="tag">Square Footage</span><span class="tag">Labor Pricing</span><span class="tag">2024</span><span class="tag">Beginners</span></div>
+    <div class="video-embed"><iframe src="https://www.youtube.com/embed/kv2wZVmrosE" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Complete?</div>
+    <div class="quiz-subtitle">Could you calculate materials and estimate a basic job?</div>
+    <button class="complete-btn" id="btn-ch10" onclick="markComplete('ch10', this)">✓ Mark Chapter 10 Complete</button>
+  </div>
+
+
+<div class="chapter-nav-footer">
+    <a href="chapter-9.html">← Previous</a>
+    <a href="index.html">📚 All Chapters</a>
+    <a href="chapter-11.html" class="next">Next Chapter →</a>
+  </div>
+</div>
+
+<div class="complete-overlay" id="completeOverlay">
+  <div class="complete-box">
+    <div class="complete-emoji">✅</div>
+    <div class="complete-title">Chapter 10 Complete!</div>
+    <p class="complete-sub">Great work. Keep going — every chapter brings you closer to getting hired.</p>
+    <button class="complete-close" onclick="document.getElementById('completeOverlay').classList.remove('show')">Stay here</button>
+    <a href="chapter-11.html" class="complete-next">Next Chapter →</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">D · DARCO INC</span>
+  <p>Construction Painting Career Program · <a href="index.html">Back to Course Home</a></p>
+</footer>
+
+<script>
+const TOTAL = 12;
+let completed = JSON.parse(localStorage.getItem('darco-paint-progress') || '[]');
+document.getElementById('navProgress').textContent = completed.length + ' / ' + TOTAL + ' done';
+
+function markComplete(id, btn) {
+  if (!completed.includes(id)) {
+    completed.push(id);
+    localStorage.setItem('darco-paint-progress', JSON.stringify(completed));
+    btn.textContent = '✓ Chapter Complete';
+    btn.classList.add('completed');
+    document.getElementById('navProgress').textContent = completed.length + ' / ' + TOTAL + ' done';
+    setTimeout(() => document.getElementById('completeOverlay').classList.add('show'), 400);
+  }
+}
+
+// Restore button state
+if (completed.includes('ch10')) {
+  const btn = document.getElementById('btn-ch10');
+  if (btn) { btn.textContent = '✓ Chapter Complete'; btn.classList.add('completed'); }
+}
+</script>
+</body>
+</html>

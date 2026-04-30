@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1 — The Trade | Darco Construction Painting Course</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">🏗️ Darco Painting Trade Course</a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-home">All Chapters</a>
+    <span class="nav-progress" id="navProgress">0 / 12 done</span>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">/</span>
+  <span class="current">Chapter 1 · The Trade</span>
+</div>
+
+<div class="chapter-page">
+  <div class="chapter-label">Chapter 1 · The Trade</div>
+
+
+  <h2>The world you're <em>about to enter.</em></h2>
+  <p>Before you hold a brush professionally, you need to understand what you're walking into — the career arc, the earning potential, and what employers are actually looking for on day one. Knowledge gets you hired. Practice makes you great.</p>
+
+  <h3>The numbers don't lie</h3>
+  <p>The U.S. Bureau of Labor Statistics projects approximately <strong>16,500 new painter job openings every year</strong> through 2032. The median annual wage for painters is around <strong>$48,990</strong>, with top earners in commercial and industrial work exceeding $80,000–$100,000. Painting contractors who build their own businesses regularly earn $150,000–$300,000 per year.</p>
+  <p><strong>You don't need a four-year degree.</strong> No student debt. No years in a classroom before you earn your first dollar. The painting trade is one of the few remaining careers in America where you can start earning real money within weeks of your first day of study.</p>
+
+  <h3>Your career arc</h3>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-marker"><div class="timeline-dot">H</div><div class="timeline-line"></div></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Painter's Helper / Laborer</div>
+        <div class="timeline-pay">Months 1–12 · $20–$25/hr</div>
+        <div class="timeline-desc">No license needed. No experience required. You prep surfaces, move materials, mask off areas, clean up, and watch everything. Every day on the job is an education you get paid for.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker"><div class="timeline-dot">J</div><div class="timeline-line"></div></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Journeyman Painter</div>
+        <div class="timeline-pay">Years 1–4 · $25–$40/hr</div>
+        <div class="timeline-desc">You handle full interior and exterior projects independently, cut in clean lines, manage your own materials. The backbone of any crew.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker"><div class="timeline-dot">L</div><div class="timeline-line"></div></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Lead Painter / Foreman</div>
+        <div class="timeline-pay">Years 3–6 · $35–$55/hr</div>
+        <div class="timeline-desc">You manage crews, oversee quality, communicate with clients, and ensure jobs run on schedule.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker"><div class="timeline-dot">O</div></div>
+      <div class="timeline-content">
+        <div class="timeline-title">Painting Contractor / Business Owner</div>
+        <div class="timeline-pay">Years 4–8+ · $100K–$300K+/yr</div>
+        <div class="timeline-desc">You bid jobs, manage multiple crews, handle business operations, and build a brand. Painters who make this leap often earn more than most college-educated professionals — without the debt.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <span class="callout-icon">💡</span> <strong>The secret most beginners don't know:</strong> Most states have no formal licensing requirement to work as a helper or journeyman. You can start earning money this week, legally, while you learn.
+  </div>
+
+  <h3>Watch — a real painter's career story</h3>
+  <div class="video-card">
+    <div class="video-title">15 Years Solo — $100K+ Painting Business (Tim Oliphant)</div>
+    <div class="video-desc">Tim started painting in college and built a six-figure solo operation. He covers equipment, pricing, marketing, Google ads, van branding, and what he'd do differently. This is the real picture of where this career can take you.</div>
+    <div class="video-tags"><span class="tag">Real Career Story</span><span class="tag">Solo Business</span><span class="tag">Marketing</span><span class="tag">Pricing</span></div>
+    <div class="video-embed"><iframe src="https://www.youtube.com/embed/gowhOZsvdCs" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Complete?</div>
+    <div class="quiz-subtitle">Watched the video and understand the career path?</div>
+    <button class="complete-btn" id="btn-ch1" onclick="markComplete('ch1', this)">✓ Mark Chapter 1 Complete</button>
+  </div>
+
+
+<div class="chapter-nav-footer">
+    <a href="chapter-0.html">← Previous</a>
+    <a href="index.html">📚 All Chapters</a>
+    <a href="chapter-2.html" class="next">Next Chapter →</a>
+  </div>
+</div>
+
+<div class="complete-overlay" id="completeOverlay">
+  <div class="complete-box">
+    <div class="complete-emoji">✅</div>
+    <div class="complete-title">Chapter 1 Complete!</div>
+    <p class="complete-sub">Great work. Keep going — every chapter brings you closer to getting hired.</p>
+    <button class="complete-close" onclick="document.getElementById('completeOverlay').classList.remove('show')">Stay here</button>
+    <a href="chapter-2.html" class="complete-next">Next Chapter →</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">D · DARCO INC</span>
+  <p>Construction Painting Career Program · <a href="index.html">Back to Course Home</a></p>
+</footer>
+
+<script>
+const TOTAL = 12;
+let completed = JSON.parse(localStorage.getItem('darco-paint-progress') || '[]');
+document.getElementById('navProgress').textContent = completed.length + ' / ' + TOTAL + ' done';
+
+function markComplete(id, btn) {
+  if (!completed.includes(id)) {
+    completed.push(id);
+    localStorage.setItem('darco-paint-progress', JSON.stringify(completed));
+    btn.textContent = '✓ Chapter Complete';
+    btn.classList.add('completed');
+    document.getElementById('navProgress').textContent = completed.length + ' / ' + TOTAL + ' done';
+    setTimeout(() => document.getElementById('completeOverlay').classList.add('show'), 400);
+  }
+}
+
+// Restore button state
+if (completed.includes('ch1')) {
+  const btn = document.getElementById('btn-ch1');
+  if (btn) { btn.textContent = '✓ Chapter Complete'; btn.classList.add('completed'); }
+}
+</script>
+</body>
+</html>

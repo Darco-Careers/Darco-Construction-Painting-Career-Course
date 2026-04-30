@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 5 — Surface Preparation | Darco Construction Painting Course</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">🏗️ Darco Painting Trade Course</a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-home">All Chapters</a>
+    <span class="nav-progress" id="navProgress">0 / 12 done</span>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">/</span>
+  <span class="current">Chapter 5 · Surface Preparation</span>
+</div>
+
+<div class="chapter-page">
+  <div class="chapter-label">Chapter 5 · Surface Preparation</div>
+
+
+  <h2>Where pros <em>separate themselves.</em></h2>
+  <blockquote>"Bad prep = peeling paint, callbacks, angry clients. Surface preparation is 70% of the job."</blockquote>
+  <p>The quality of a paint job is determined <strong>before</strong> a drop of paint is ever applied. Professional painters obsess over prep. Beginners rush past it. That difference is visible in the finished work — and it's the difference between a one-time job and a referral business.</p>
+
+  <h3>Cleaning surfaces</h3>
+  <ul>
+    <li>Remove all dirt, grease, and grime — paint will not adhere to contaminated surfaces</li>
+    <li>Use TSP (trisodium phosphate) for kitchen walls and high-grease areas</li>
+    <li>Use mildicide cleaner on any surface with mold or mildew — never paint over mold</li>
+    <li>Allow surfaces to dry completely before any further prep or painting</li>
+    <li>On exterior surfaces, pressure washing is standard — control the pressure to avoid damage</li>
+  </ul>
+
+  <h3>Repairing damage</h3>
+  <ul>
+    <li><strong>Small holes (under 1/2"):</strong> Fill with lightweight spackle, allow to dry, sand smooth</li>
+    <li><strong>Medium holes (1/2"–3"):</strong> Use a mesh patch kit, apply joint compound in thin coats, sand between coats</li>
+    <li><strong>Large holes:</strong> Cut out damaged section, install a backing board, patch with drywall</li>
+    <li><strong>Cracks:</strong> Widen slightly, fill with flexible caulk or joint compound</li>
+    <li><strong>Woodwork gaps:</strong> Always caulk the joint between trim and wall — this is the clean professional line clients expect</li>
+  </ul>
+
+  <h3>Sanding — grit guide</h3>
+  <table class="data-table">
+    <thead><tr><th>Grit</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td>60–80</td><td>Removing old paint, rough wood</td></tr>
+      <tr><td>100–120</td><td>General surface prep, smoothing patches</td></tr>
+      <tr><td>150–180</td><td>Final prep before painting, scuffing gloss</td></tr>
+      <tr><td>220</td><td>Between coats — cabinets and trim</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Priming — the step beginners skip</h3>
+  <ul>
+    <li><strong>New drywall:</strong> Always prime — raw drywall absorbs paint unevenly (called "flashing")</li>
+    <li><strong>Repairs and patches:</strong> Always prime — patches absorb differently than surrounding wall</li>
+    <li><strong>Color changes (dark to light):</strong> Use tinted primer to reduce coats needed</li>
+    <li><strong>Stains (water, smoke, nicotine):</strong> Use stain-blocking primer (Zinsser BIN or Kilz) — regular primer will not block these</li>
+    <li><strong>Bare wood:</strong> Always prime exterior wood before painting</li>
+  </ul>
+
+  <div class="callout warning">
+    <span class="callout-icon">⚠️</span> Skipping primer on stains is the most common beginner mistake. Apply two coats of regular paint over a water stain and it will bleed back through both coats. Use Zinsser BIN and it disappears permanently.
+  </div>
+
+  <h3>Watch — how to prep a room like a pro</h3>
+  <div class="video-card">
+    <div class="video-title">Interior Painting Step 1 — Prepping a Room (John Burbidge, 1.2M views)</div>
+    <div class="video-desc">John Burbidge — author of "Watching Paint Dry" — walks through the complete room prep sequence: clearing the space, spackling nail holes, sanding, caulking, masking, and priming. The step that determines everything.</div>
+    <div class="video-tags"><span class="tag">Surface Prep</span><span class="tag">Spackling</span><span class="tag">Caulking</span><span class="tag">Priming</span><span class="tag">Step-by-Step</span></div>
+    <div class="video-embed"><iframe src="https://www.youtube.com/embed/oNagIA8sKY0" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Chapter Complete?</div>
+    <div class="quiz-subtitle">Could you walk onto a job and prep a room correctly?</div>
+    <button class="complete-btn" id="btn-ch5" onclick="markComplete('ch5', this)">✓ Mark Chapter 5 Complete</button>
+  </div>
+
+
+<div class="chapter-nav-footer">
+    <a href="chapter-4.html">← Previous</a>
+    <a href="index.html">📚 All Chapters</a>
+    <a href="chapter-6.html" class="next">Next Chapter →</a>
+  </div>
+</div>
+
+<div class="complete-overlay" id="completeOverlay">
+  <div class="complete-box">
+    <div class="complete-emoji">✅</div>
+    <div class="complete-title">Chapter 5 Complete!</div>
+    <p class="complete-sub">Great work. Keep going — every chapter brings you closer to getting hired.</p>
+    <button class="complete-close" onclick="document.getElementById('completeOverlay').classList.remove('show')">Stay here</button>
+    <a href="chapter-6.html" class="complete-next">Next Chapter →</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">D · DARCO INC</span>
+  <p>Construction Painting Career Program · <a href="index.html">Back to Course Home</a></p>
+</footer>
+
+<script>
+const TOTAL = 12;
+let completed = JSON.parse(localStorage.getItem('darco-paint-progress') || '[]');
+document.getElementById('navProgress').textContent = completed.length + ' / ' + TOTAL + ' done';
+
+function markComplete(id, btn) {
+  if (!completed.includes(id)) {
+    completed.push(id);
+    localStorage.setItem('darco-paint-progress', JSON.stringify(completed));
+    btn.textContent = '✓ Chapter Complete';
+    btn.classList.add('completed');
+    document.getElementById('navProgress').textContent = completed.length + ' / ' + TOTAL + ' done';
+    setTimeout(() => document.getElementById('completeOverlay').classList.add('show'), 400);
+  }
+}
+
+// Restore button state
+if (completed.includes('ch5')) {
+  const btn = document.getElementById('btn-ch5');
+  if (btn) { btn.textContent = '✓ Chapter Complete'; btn.classList.add('completed'); }
+}
+</script>
+</body>
+</html>
