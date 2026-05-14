@@ -145,10 +145,11 @@ footer{background:var(--purple);color:rgba(255,255,255,0.7);text-align:center;pa
 .footer-brand{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--white);margin-bottom:0.5rem;}
 .footer-gold{color:var(--gold-light);}
 
+
 .module-glossary{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:2rem 2.25rem;margin:2.5rem 0;}
 .module-glossary h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--text-dark);margin-bottom:0.35rem;}
 .mg-sub{font-size:13px;color:var(--text-light);margin-bottom:1.5rem;}
-.mg-search{width:100%;padding:9px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:1.25rem;transition:border 0.2s;}
+.mg-search{width:100%;padding:9px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:1.25rem;transition:border 0.2s;box-sizing:border-box;}
 .mg-search:focus{border-color:var(--purple-mid);}
 .mg-terms{display:flex;flex-direction:column;gap:0;}
 .mg-term{padding:0.85rem 0;border-bottom:1px solid var(--border);}
@@ -161,7 +162,6 @@ footer{background:var(--purple);color:rgba(255,255,255,0.7);text-align:center;pa
 .mg-def{font-size:13.5px;color:var(--text-mid);line-height:1.7;}
 .mg-tip{font-size:12px;color:var(--purple-mid);margin-top:0.3rem;font-style:italic;}
 .mg-none{font-size:13px;color:var(--text-light);padding:1rem 0;text-align:center;display:none;}
-
 </style>
 </head>
 <body>
@@ -541,55 +541,58 @@ footer{background:var(--purple);color:rgba(255,255,255,0.7);text-align:center;pa
   
   <!-- MODULE GLOSSARY -->
 
+  
+
+  
   <div class="module-glossary">
-    <h3>📖 Module 6 — Key Terms &amp; Definitions</h3>
+    <h3>&#128218; Module 6 &mdash; Key Terms &amp; Definitions</h3>
     <p class="mg-sub">All terms introduced in this module. Search to find any definition instantly.</p>
     <input type="text" class="mg-search" id="mgSearch6" placeholder="Search terms..." oninput="mgFilter(this,6)">
     <div class="mg-terms" id="mgTerms6">
-      <div class="mg-term" data-mg="30-10-5-5-3-1 formula  social media strategy dustin owen's daily social media formula: 30 minutes total; 10 likes/reacts; 5 new connection requests; 5 thoughtful comments (use on realtor partners' posts); 3 dms; 1 original post. in 2026, the '1 post' is most effective as short-form face-to-camera video (reels, tiktok, youtube shorts).">
+      <div class="mg-term" data-mg="30-10-5-5-3-1 formula  social media strategy daily social media formula: 30 minutes total; 10 likes; 5 new connection requests; 5 comments (target realtor partners' posts); 3 dms; 1 original post. in 2026, short-form face-to-camera video outperforms static posts.">
         <div class="mg-term-header"><span class="mg-name">30-10-5-5-3-1 Formula</span><span class="mg-law">Social Media Strategy</span></div>
-        <div class="mg-def">Dustin Owen's daily social media formula: 30 minutes total; 10 likes/reacts; 5 new connection requests; 5 thoughtful comments (use on Realtor partners' posts); 3 DMs; 1 original post. In 2026, the '1 post' is most effective as short-form face-to-camera video (Reels, TikTok, YouTube Shorts).</div>
+        <div class="mg-def">Daily social media formula: 30 minutes total; 10 likes; 5 new connection requests; 5 comments (target Realtor partners' posts); 3 DMs; 1 original post. In 2026, short-form face-to-camera video outperforms static posts.</div>
       </div>
-      <div class="mg-term" data-mg="12-week challenge  prospecting system 60 business days (84 calendar days) of structured prospecting: day 1 — written outreach to 10–12 new referral sources; day 2 — follow-up calls to schedule meetings; day 3 — attend face-to-face meetings. expected: 60 meetings → 15 referral partners → 20+ loans → $60k+ in year one, compounding annually.">
+      <div class="mg-term" data-mg="12-week challenge  prospecting system 60 business days of structured prospecting: outreach to 10-12 referral sources daily, follow-up calls to schedule meetings, attend face-to-face meetings. expected: 60 meetings, 15 referral partners, 20+ loans, $60k+ year one.">
         <div class="mg-term-header"><span class="mg-name">12-Week Challenge</span><span class="mg-law">Prospecting System</span></div>
-        <div class="mg-def">60 business days (84 calendar days) of structured prospecting: Day 1 — written outreach to 10–12 new referral sources; Day 2 — follow-up calls to schedule meetings; Day 3 — attend face-to-face meetings. Expected: 60 meetings → 15 referral partners → 20+ loans → $60K+ in year one, compounding annually.</div>
+        <div class="mg-def">60 business days of structured prospecting: outreach to 10-12 referral sources daily, follow-up calls to schedule meetings, attend face-to-face meetings. Expected: 60 meetings, 15 referral partners, 20+ loans, $60K+ year one.</div>
       </div>
-      <div class="mg-term" data-mg="crm customer relationship management business infrastructure software managing the mlo's database of clients, leads, and referral sources. mortgage-specific options: total expert, jungo, salesforce mortgage. automates birthday messages, closing anniversaries, rate-drop alerts, and realtor status updates. essential once the database exceeds 50 files.">
+      <div class="mg-term" data-mg="crm customer relationship management business infrastructure software managing the mlo's database and automating follow-up. mortgage-specific: total expert, jungo, salesforce mortgage. essential once database exceeds 50 files.">
         <div class="mg-term-header"><span class="mg-name">CRM</span><span class="mg-abbr">Customer Relationship Management</span><span class="mg-law">Business Infrastructure</span></div>
-        <div class="mg-def">Software managing the MLO's database of clients, leads, and referral sources. Mortgage-specific options: Total Expert, Jungo, Salesforce Mortgage. Automates birthday messages, closing anniversaries, rate-drop alerts, and Realtor status updates. Essential once the database exceeds 50 files.</div>
+        <div class="mg-def">Software managing the MLO's database and automating follow-up. Mortgage-specific: Total Expert, Jungo, Salesforce Mortgage. Essential once database exceeds 50 files.</div>
       </div>
-      <div class="mg-term" data-mg="loa loan officer assistant first hire an mlo's first hire handling front-end administrative tasks: document collection, 1003 data entry, borrower follow-up for missing items, appraisal scheduling, and realtor status updates. typically $20–35/hr. allows the mlo to stay in revenue-generating activities.">
+      <div class="mg-term" data-mg="loa loan officer assistant first hire first hire for a growing mlo. handles 1003 data entry, document collection, borrower follow-up, appraisal scheduling, and realtor status updates.">
         <div class="mg-term-header"><span class="mg-name">LOA</span><span class="mg-abbr">Loan Officer Assistant</span><span class="mg-law">First Hire</span></div>
-        <div class="mg-def">An MLO's first hire handling front-end administrative tasks: document collection, 1003 data entry, borrower follow-up for missing items, appraisal scheduling, and Realtor status updates. Typically $20–35/hr. Allows the MLO to stay in revenue-generating activities.</div>
+        <div class="mg-def">First hire for a growing MLO. Handles 1003 data entry, document collection, borrower follow-up, appraisal scheduling, and Realtor status updates.</div>
       </div>
-      <div class="mg-term" data-mg="open house strategy  realtor prospecting visit 3 open houses per saturday, 15 saturdays per year. spend 10–15 minutes at each, connect on social before leaving, follow up monday. of 45 agent contacts, expect 8 long-term referral partners worth $20–40k each annually.">
+      <div class="mg-term" data-mg="open house strategy  realtor prospecting visit 3 open houses per saturday, 15 saturdays per year. connect on social before leaving, follow up monday. of 45 agent contacts, expect 8 long-term referral partners.">
         <div class="mg-term-header"><span class="mg-name">Open House Strategy</span><span class="mg-law">Realtor Prospecting</span></div>
-        <div class="mg-def">Visit 3 open houses per Saturday, 15 Saturdays per year. Spend 10–15 minutes at each, connect on social before leaving, follow up Monday. Of 45 agent contacts, expect 8 long-term referral partners worth $20–40K each annually.</div>
+        <div class="mg-def">Visit 3 open houses per Saturday, 15 Saturdays per year. Connect on social before leaving, follow up Monday. Of 45 agent contacts, expect 8 long-term referral partners.</div>
       </div>
-      <div class="mg-term" data-mg="tbd underwriting upfront underwriting pre-approval tool running a borrower through full underwriting before a property is identified — creating a credit-approved file where only the address is missing. stronger than a standard pre-approval in competitive markets. also allows the file to remain in pre-application lead status, avoiding the aliens le clock trigger.">
+      <div class="mg-term" data-mg="respa section 8 boundary  compliance co-marketing value to realtor partners must be sweat equity and services — never money or marketing dollars. cannot pay for an agent's zillow leads or co-fund advertising in exchange for referrals. violation: $10,000 fine + 1 year prison + 3x civil damages.">
+        <div class="mg-term-header"><span class="mg-name">RESPA Section 8 Boundary</span><span class="mg-law">Compliance Co-Marketing</span></div>
+        <div class="mg-def">Value to Realtor partners must be sweat equity and services — never money or marketing dollars. Cannot pay for an agent's Zillow leads or co-fund advertising in exchange for referrals. Violation: $10,000 fine + 1 year prison + 3x civil damages.</div>
+      </div>
+      <div class="mg-term" data-mg="tbd underwriting upfront underwriting pre-approval tool full underwriting before a property is identified — credit-approved with only property address missing. stronger than standard pre-approval in multiple-offer markets.">
         <div class="mg-term-header"><span class="mg-name">TBD Underwriting</span><span class="mg-abbr">Upfront Underwriting</span><span class="mg-law">Pre-Approval Tool</span></div>
-        <div class="mg-def">Running a borrower through full underwriting before a property is identified — creating a credit-approved file where only the address is missing. Stronger than a standard pre-approval in competitive markets. Also allows the file to remain in Pre-Application Lead status, avoiding the ALIENS LE clock trigger.</div>
+        <div class="mg-def">Full underwriting before a property is identified — credit-approved with only property address missing. Stronger than standard pre-approval in multiple-offer markets.</div>
       </div>
-      <div class="mg-term" data-mg="unicorn partnership  realtor relationships the highest-value realtor relationship — built on deep mutual trust, consistent referrals, and shared commitment to client service. unicorn realtors are professional, full-time, and in growth mode. to attract one, become one.">
+      <div class="mg-term" data-mg="unicorn partnership  realtor relationships highest-value realtor relationship built on mutual trust and consistent referrals. unicorn realtors: professional, full-time, growth mode. to attract one, become one.">
         <div class="mg-term-header"><span class="mg-name">Unicorn Partnership</span><span class="mg-law">Realtor Relationships</span></div>
-        <div class="mg-def">The highest-value Realtor relationship — built on deep mutual trust, consistent referrals, and shared commitment to client service. Unicorn Realtors are professional, full-time, and in growth mode. To attract one, become one.</div>
+        <div class="mg-def">Highest-value Realtor relationship built on mutual trust and consistent referrals. Unicorn Realtors: professional, full-time, growth mode. To attract one, become one.</div>
       </div>
-      <div class="mg-term" data-mg="value gap  business development the competitive distance created when an mlo consistently brings genuine value to partners and clients before asking for anything in return. built through sweat equity: open houses, prospecting alongside agents, education events, constant availability. the most powerful long-term competitive advantage available.">
+      <div class="mg-term" data-mg="value gap  business development competitive distance created by consistently bringing value before asking for anything in return. built through sweat equity: open houses, prospecting alongside agents, education, availability.">
         <div class="mg-term-header"><span class="mg-name">Value Gap</span><span class="mg-law">Business Development</span></div>
-        <div class="mg-def">The competitive distance created when an MLO consistently brings genuine value to partners and clients before asking for anything in return. Built through sweat equity: open houses, prospecting alongside agents, education events, constant availability. The most powerful long-term competitive advantage available.</div>
+        <div class="mg-def">Competitive distance created by consistently bringing value before asking for anything in return. Built through sweat equity: open houses, prospecting alongside agents, education, availability.</div>
       </div>
-      <div class="mg-term" data-mg="who not how  scaling mindset the mindset shift from 'how do i do more?' to 'who do i need?' hire for $25–40/hour tasks (data entry, scheduling, document chasing) so you can focus on $250–500/hour activities (realtor relationships, borrower consulting, presentations).">
+      <div class="mg-term" data-mg="who not how  scaling mindset mindset shift from how do i do more to who do i need. hire for $25-40/hour tasks so you can focus on $250-500/hour activities like realtor relationships and borrower consulting.">
         <div class="mg-term-header"><span class="mg-name">Who Not How</span><span class="mg-law">Scaling Mindset</span></div>
-        <div class="mg-def">The mindset shift from 'How do I do more?' to 'Who do I need?' Hire for $25–40/hour tasks (data entry, scheduling, document chasing) so you can focus on $250–500/hour activities (Realtor relationships, borrower consulting, presentations).</div>
-      </div>
-      <div class="mg-term" data-mg="value gap (respa context) respa section 8 boundary compliance value delivered to realtor partners must be sweat equity and services — never money or marketing dollars. cannot pay for an agent's zillow leads, co-fund advertising, or provide anything of monetary value in exchange for referrals. violation: $10,000 fine + 1 year prison + 3x civil damages.">
-        <div class="mg-term-header"><span class="mg-name">Value Gap (RESPA Context)</span><span class="mg-abbr">RESPA Section 8 Boundary</span><span class="mg-law">Compliance</span></div>
-        <div class="mg-def">Value delivered to Realtor partners must be sweat equity and services — never money or marketing dollars. Cannot pay for an agent's Zillow leads, co-fund advertising, or provide anything of monetary value in exchange for referrals. Violation: $10,000 fine + 1 year prison + 3x civil damages.</div>
+        <div class="mg-def">Mindset shift from How do I do more to Who do I need. Hire for $25-40/hour tasks so you can focus on $250-500/hour activities like Realtor relationships and borrower consulting.</div>
       </div>
     </div>
     <div class="mg-none" id="mgNone6">No terms found.</div>
     <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);text-align:center;">
-      <a href="mlo-glossary.html" style="font-size:13px;color:var(--purple-mid);text-decoration:none;font-weight:600;">View Full Course Glossary (All 7 Modules) →</a>
+      <a href="mlo-glossary.html" style="font-size:13px;color:var(--purple-mid);text-decoration:none;font-weight:600;">View Full Course Glossary (All 7 Modules) &rarr;</a>
     </div>
   </div>
 
@@ -598,8 +601,6 @@ footer{background:var(--purple);color:rgba(255,255,255,0.7);text-align:center;pa
     <p>You have completed all 6 content modules. Module 7 is your final preparation before exam day — a structured launch pad with key numbers and timelines to memorize, a study checklist, links to the best free practice resources, exam logistics, and everything you need to walk into the testing center confident and ready.</p>
     <a href="mlo-module-7.html" class="next-module-cta">Module 7: NMLS Exam Launch Pad →</a>
   </div>
-
-
 
   
 </div>
@@ -620,17 +621,7 @@ footer{background:var(--purple);color:rgba(255,255,255,0.7);text-align:center;pa
 </footer>
 
 <script>
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}
+
 
 function mgFilter(el,n){
   var q=el.value.toLowerCase();
@@ -643,65 +634,6 @@ function mgFilter(el,n){
   });
   document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
 }
-
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}
-
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}
-
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}
-
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}
-
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}</script>
+</script>
 </body>
 </html>

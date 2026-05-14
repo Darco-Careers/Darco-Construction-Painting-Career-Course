@@ -179,10 +179,11 @@ footer{background:var(--purple);color:rgba(255,255,255,0.7);text-align:center;pa
 .fade-in{opacity:1;transform:none;transition:opacity 0.55s ease,transform 0.55s ease;}
 .fade-in.visible{opacity:1;transform:none;}
 
+
 .module-glossary{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:2rem 2.25rem;margin:2.5rem 0;}
 .module-glossary h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--text-dark);margin-bottom:0.35rem;}
 .mg-sub{font-size:13px;color:var(--text-light);margin-bottom:1.5rem;}
-.mg-search{width:100%;padding:9px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:1.25rem;transition:border 0.2s;}
+.mg-search{width:100%;padding:9px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:1.25rem;transition:border 0.2s;box-sizing:border-box;}
 .mg-search:focus{border-color:var(--purple-mid);}
 .mg-terms{display:flex;flex-direction:column;gap:0;}
 .mg-term{padding:0.85rem 0;border-bottom:1px solid var(--border);}
@@ -195,7 +196,6 @@ footer{background:var(--purple);color:rgba(255,255,255,0.7);text-align:center;pa
 .mg-def{font-size:13.5px;color:var(--text-mid);line-height:1.7;}
 .mg-tip{font-size:12px;color:var(--purple-mid);margin-top:0.3rem;font-style:italic;}
 .mg-none{font-size:13px;color:var(--text-light);padding:1rem 0;text-align:center;display:none;}
-
 </style>
 </head>
 <body>
@@ -607,30 +607,33 @@ footer{background:var(--purple);color:rgba(255,255,255,0.7);text-align:center;pa
   <!-- NEXT MODULE -->
   
 
+  
+
+  
   <div class="module-glossary">
-    <h3>📖 Module 1 — Key Terms &amp; Definitions</h3>
+    <h3>&#128218; Module 1 &mdash; Key Terms &amp; Definitions</h3>
     <p class="mg-sub">All terms introduced in this module. Search to find any definition instantly.</p>
     <input type="text" class="mg-search" id="mgSearch1" placeholder="Search terms..." oninput="mgFilter(this,1)">
     <div class="mg-terms" id="mgTerms1">
-      <div class="mg-term" data-mg="broker channel  mortgage industry origination model where mlo works independently, submitting loan applications to multiple wholesale lenders. the broker does not fund the loan — the wholesale lender does.">
+      <div class="mg-term" data-mg="broker channel  mortgage industry origination model where the mlo works independently, submitting applications to multiple wholesale lenders to find the best rate. the broker does not fund the loan.">
         <div class="mg-term-header"><span class="mg-name">Broker Channel</span><span class="mg-law">Mortgage Industry</span></div>
-        <div class="mg-def">Origination model where MLO works independently, submitting loan applications to multiple wholesale lenders. The broker does not fund the loan — the wholesale lender does.</div>
+        <div class="mg-def">Origination model where the MLO works independently, submitting applications to multiple wholesale lenders to find the best rate. The broker does not fund the loan.</div>
       </div>
-      <div class="mg-term" data-mg="continuing education ce safe act annual 8-hour education requirement for licensed mlos covering federal law, ethics, and elective topics. must be completed before license renewal each year.">
+      <div class="mg-term" data-mg="continuing education ce safe act annual 8-hour education requirement for licensed mlos. must be completed before license renewal.">
         <div class="mg-term-header"><span class="mg-name">Continuing Education</span><span class="mg-abbr">CE</span><span class="mg-law">SAFE Act</span></div>
-        <div class="mg-def">Annual 8-hour education requirement for licensed MLOs covering federal law, ethics, and elective topics. Must be completed before license renewal each year.</div><div class="mg-tip">💡 20 hours pre-licensing, 8 hours CE annually.</div>
+        <div class="mg-def">Annual 8-hour education requirement for licensed MLOs. Must be completed before license renewal.</div><div class="mg-tip">💡 20 hours pre-licensing + 8 hours CE annually.</div>
       </div>
-      <div class="mg-term" data-mg="correspondent lender  mortgage industry originates and funds loans using its own capital, then sells them to larger investors shortly after closing. sits between retail and wholesale lenders.">
+      <div class="mg-term" data-mg="correspondent lender  mortgage industry originates and funds loans using its own capital, then sells them to investors after closing. sits between retail and wholesale lenders.">
         <div class="mg-term-header"><span class="mg-name">Correspondent Lender</span><span class="mg-law">Mortgage Industry</span></div>
-        <div class="mg-def">Originates and funds loans using its own capital, then sells them to larger investors shortly after closing. Sits between retail and wholesale lenders.</div>
+        <div class="mg-def">Originates and funds loans using its own capital, then sells them to investors after closing. Sits between retail and wholesale lenders.</div>
       </div>
-      <div class="mg-term" data-mg="federally chartered institution  licensing banks regulated at the federal level. mlos at these institutions are federally registered — not state licensed — and exempt from the safe exam.">
+      <div class="mg-term" data-mg="federally chartered institution  licensing banks regulated at the federal level. mlos here are federally registered — not state licensed — and exempt from the safe exam.">
         <div class="mg-term-header"><span class="mg-name">Federally Chartered Institution</span><span class="mg-law">Licensing</span></div>
-        <div class="mg-def">Banks regulated at the federal level. MLOs at these institutions are federally registered — not state licensed — and exempt from the SAFE exam.</div>
+        <div class="mg-def">Banks regulated at the federal level. MLOs here are federally registered — not state licensed — and exempt from the SAFE exam.</div>
       </div>
-      <div class="mg-term" data-mg="hard money / private lending  niche lending short-term loans funded by private investors for investment properties. asset-based — qualification depends primarily on property value, not borrower credit or income.">
+      <div class="mg-term" data-mg="hard money / private lending  niche lending short-term loans from private investors for investment properties. asset-based — qualification depends on property value, not income or credit.">
         <div class="mg-term-header"><span class="mg-name">Hard Money / Private Lending</span><span class="mg-law">Niche Lending</span></div>
-        <div class="mg-def">Short-term loans funded by private investors for investment properties. Asset-based — qualification depends primarily on property value, not borrower credit or income.</div>
+        <div class="mg-def">Short-term loans from private investors for investment properties. Asset-based — qualification depends on property value, not income or credit.</div>
       </div>
       <div class="mg-term" data-mg="hera housing and economic recovery act 2008 the federal legislation containing the safe act. hera is the parent law — the safe act lives inside it.">
         <div class="mg-term-header"><span class="mg-name">HERA</span><span class="mg-abbr">Housing and Economic Recovery Act</span><span class="mg-law">2008</span></div>
@@ -640,30 +643,30 @@ footer{background:var(--purple);color:rgba(255,255,255,0.7);text-align:center;pa
         <div class="mg-term-header"><span class="mg-name">MLO</span><span class="mg-abbr">Mortgage Loan Originator</span><span class="mg-law">Licensing</span></div>
         <div class="mg-def">A licensed professional who takes residential mortgage loan applications and offers or negotiates loan terms for compensation.</div>
       </div>
-      <div class="mg-term" data-mg="mu4 form individual license application nmls the individual license application form filed through nmls. updated april 18, 2026: 'found' now includes public settlements; foreclosure disclosure covers efforts to foreclose including non-judicial proceedings.">
+      <div class="mg-term" data-mg="mu4 form individual license application nmls individual license application filed through nmls. april 2026 update: 'found' now includes public settlements; foreclosure disclosure covers non-judicial proceedings.">
         <div class="mg-term-header"><span class="mg-name">MU4 Form</span><span class="mg-abbr">Individual License Application</span><span class="mg-law">NMLS</span></div>
-        <div class="mg-def">The individual license application form filed through NMLS. Updated April 18, 2026: 'Found' now includes public settlements; foreclosure disclosure covers efforts to foreclose including non-judicial proceedings.</div>
+        <div class="mg-def">Individual license application filed through NMLS. April 2026 update: 'Found' now includes public settlements; foreclosure disclosure covers non-judicial proceedings.</div>
       </div>
-      <div class="mg-term" data-mg="nmls nationwide multistate licensing system licensing centralized system for licensing and registering mlos. every licensed mlo receives a unique nmls id. account created at mortgage.nationwidelicensingsystem.org.">
+      <div class="mg-term" data-mg="nmls nationwide multistate licensing system licensing centralized system for licensing and registering mlos. every mlo receives a unique nmls id. account at mortgage.nationwidelicensingsystem.org.">
         <div class="mg-term-header"><span class="mg-name">NMLS</span><span class="mg-abbr">Nationwide Multistate Licensing System</span><span class="mg-law">Licensing</span></div>
-        <div class="mg-def">Centralized system for licensing and registering MLOs. Every licensed MLO receives a unique NMLS ID. Account created at mortgage.nationwidelicensingsystem.org.</div>
+        <div class="mg-def">Centralized system for licensing and registering MLOs. Every MLO receives a unique NMLS ID. Account at mortgage.nationwidelicensingsystem.org.</div>
       </div>
-      <div class="mg-term" data-mg="retail channel  mortgage industry mlo works directly for a lender using that lender's products. best for new mlos — provides training, support, and marketing resources.">
+      <div class="mg-term" data-mg="retail channel  mortgage industry mlo works directly for a lender using that lender's products. best for new mlos — provides training, support, and marketing.">
         <div class="mg-term-header"><span class="mg-name">Retail Channel</span><span class="mg-law">Mortgage Industry</span></div>
-        <div class="mg-def">MLO works directly for a lender using that lender's products. Best for new MLOs — provides training, support, and marketing resources.</div>
+        <div class="mg-def">MLO works directly for a lender using that lender's products. Best for new MLOs — provides training, support, and marketing.</div>
       </div>
-      <div class="mg-term" data-mg="safe act secure and fair enforcement for mortgage licensing act 2008 · inside hera requires state-licensed mlos to register with nmls, pass background/credit checks, complete 20 hours pre-licensing education, and pass the national exam (75%).">
-        <div class="mg-term-header"><span class="mg-name">SAFE Act</span><span class="mg-abbr">Secure and Fair Enforcement for Mortgage Licensing Act</span><span class="mg-law">2008 · Inside HERA</span></div>
-        <div class="mg-def">Requires state-licensed MLOs to register with NMLS, pass background/credit checks, complete 20 hours pre-licensing education, and pass the national exam (75%).</div><div class="mg-tip">💡 Know all four words. Exam uses 'Federal' or 'Financial' as distractors.</div>
+      <div class="mg-term" data-mg="safe act secure and fair enforcement for mortgage licensing act 2008 inside hera requires state-licensed mlos to register with nmls, pass background and credit checks, complete 20 hours pre-licensing education, and pass the national test (75%).">
+        <div class="mg-term-header"><span class="mg-name">SAFE Act</span><span class="mg-abbr">Secure and Fair Enforcement for Mortgage Licensing Act</span><span class="mg-law">2008 Inside HERA</span></div>
+        <div class="mg-def">Requires state-licensed MLOs to register with NMLS, pass background and credit checks, complete 20 hours pre-licensing education, and pass the national test (75%).</div><div class="mg-tip">💡 Know all four words. Exam uses 'Federal' or 'Financial' as distractors.</div>
       </div>
-      <div class="mg-term" data-mg="wholesale lender  mortgage industry funds loans originated by mortgage brokers. does not deal directly with consumers. typically offers better rates than retail due to lower overhead.">
+      <div class="mg-term" data-mg="wholesale lender  mortgage industry funds loans originated by mortgage brokers. does not deal directly with consumers. typically offers better rates than retail.">
         <div class="mg-term-header"><span class="mg-name">Wholesale Lender</span><span class="mg-law">Mortgage Industry</span></div>
-        <div class="mg-def">Funds loans originated by mortgage brokers. Does not deal directly with consumers. Typically offers better rates than retail due to lower overhead.</div>
+        <div class="mg-def">Funds loans originated by mortgage brokers. Does not deal directly with consumers. Typically offers better rates than retail.</div>
       </div>
     </div>
     <div class="mg-none" id="mgNone1">No terms found.</div>
     <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);text-align:center;">
-      <a href="mlo-glossary.html" style="font-size:13px;color:var(--purple-mid);text-decoration:none;font-weight:600;">View Full Course Glossary (All 7 Modules) →</a>
+      <a href="mlo-glossary.html" style="font-size:13px;color:var(--purple-mid);text-decoration:none;font-weight:600;">View Full Course Glossary (All 7 Modules) &rarr;</a>
     </div>
   </div>
 
@@ -672,8 +675,6 @@ footer{background:var(--purple);color:rgba(255,255,255,0.7);text-align:center;pa
     <p>You understand the role and the path to licensure. Now the real technical knowledge begins. Module 2 covers every major loan product an MLO needs to know — conventional loans (conforming and non-conforming), FHA, VA, USDA, jumbo, adjustable-rate mortgages, and Non-QM products. You will learn the eligibility criteria, down payment requirements, credit score thresholds, and key characteristics of each loan type — all tested on the NMLS exam.</p>
     <a href="mlo-module-2.html" class="next-module-cta">Module 2: Mortgage Products and Loan Types →</a>
   </div>
-
-
 
   
 </div>
@@ -739,89 +740,6 @@ function checkAnswers(){
   }
 }
 
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}
-
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}
-
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}
-
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}
-
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}
-
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}
-
-function mgFilter(el,n){
-  var q=el.value.toLowerCase();
-  var terms=document.querySelectorAll('#mgTerms'+n+' .mg-term');
-  var count=0;
-  terms.forEach(function(t){
-    var match=!q||t.getAttribute('data-mg').indexOf(q)>-1;
-    t.classList.toggle('mg-hidden',!match);
-    if(match)count++;
-  });
-  document.getElementById('mgNone'+n).style.display=count===0?'block':'none';
-}
 
 function mgFilter(el,n){
   var q=el.value.toLowerCase();
